@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск по мере набора</title>
+    <style>
+        #results div {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+        }
+        #results div:hover {
+            background-color: #f0f0f0;
+        }
+        #results img {
+            display: block; /* Чтобы изображения отображались друг под другом */
+            margin-bottom: 10px; /* Отступ между изображениями */
+        }
+    </style>
+</head>
+<body>
+<h1>Поиск по мере набора</h1>
+<input type="text" id="search-input" placeholder="Введите запрос...">
+<div id="results"></div>
+
+<script>
+    const searchInput = document.getElementById('search-input');
+    const resultsContainer = document.getElementById('results');
+
+    // Обработка ввода в поле поиска
+    searchInput.addEventListener('input', function() {
+        const query = searchInput.value.trim();
+
+        if (query.length === 0) {
+            resultsContainer.innerHTML = ''; // Очищаем результаты, если запрос пустой
+            return;
+        }
+
+        // Отправляем запрос на сервер
+        fetch(`search.php?q=${encodeURIComponent(query)}`)
+            .then(response => response.json())
+            .then(data => {
+                resultsContainer.innerHTML = ''; // Очищаем предыдущие результаты
+
+                const array = data.image_url;
+
+                array.forEach(url =>{
+                    console.log(String(url));
+                });
+                if (data.image_url && data.image_url.length > 0) {
+                    data.image_url.forEach(url => {
+                        const img = document.createElement('img'); // Создаем элемент <img>
+                        img.src = url; // Устанавливаем путь к изображению
+                        img.width = 512; // Устанавливаем ширину изображения
+                        img.alt = 'Изображение'; // Добавляем альтернативный текст
+                        resultsContainer.appendChild(img); // Добавляем изображение в контейнер
+                    });
+                } else {
+                    resultsContainer.innerHTML = '<div>Ничего не найдено</div>';
+                }
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+                resultsContainer.innerHTML = '<div>Произошла ошибка при поиске</div>';
+            });
+    });
+</script>
+</body>
+</html>
