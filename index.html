@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Поиск по мере набора</title>
-    <script src="search.js"></script>
     <style>
         #results div {
             padding: 10px;
@@ -24,15 +23,6 @@
 <h1>Поиск по мере набора</h1>
 <input type="text" id="search-input" placeholder="Введите запрос...">
 <div id="results"></div>
-<script>
-    async function searchFetchData(){
-        const data = await fetchData();
-        data.forEach(url =>{
-            console.log(url.image_url)
-        })
-    }
-
-    searchFetchData();
-</script>
 </body>
+<script src="search.js"></script>
 </html>
