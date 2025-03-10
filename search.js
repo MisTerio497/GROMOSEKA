@@ -1,18 +1,14 @@
-const imageUrls = [];
 
-fetch('search.php')
-    .then(response => {
+async function fetchData() {
+    try {
+        const response = await fetch('search.php');
         if (!response.ok) {
             throw new Error(`Ошибка HTTP: ${response.status}`);
         }
-        return response.json(); // Преобразуем ответ в JSON
-    })
-    .then(data => {
-      const urls = data.map(item => item.image_url);
-      urls.forEach(url => {
-        imageUrls.push(url);
-      });
-    })
-    .catch(error => {
+        const data = await response.json(); // Преобразуем ответ в JSON
+
+        return data;// Выводим результаты поиска
+    } catch (error) {
         console.error('Ошибка:', error); // Обработка ошибок
-    });
+    }
+}
