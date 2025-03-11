@@ -11,9 +11,8 @@ def clear_text(url):
     # отправляем исходный код страницы на обработку в библиотеку
     inner_soup = BeautifulSoup(inner_html_code, 'html.parser')
     # получаем данные
-    text = inner_soup.find('div', {'class': 'content-markdown'})
-    text = inner_soup.find('p')
-    name = inner_soup.find('div', {'class': 'game-unit_name'})
+    text = inner_soup.find('div', {'class': 'content-markdown'}).find('p').get_text()
+    name = inner_soup.find('div', {'class': 'game-unit_name'}).get_text().replace('\xa0', ' ').lstrip('◔␙␠␗▃▅▄▄▂▄▀▄◊')
     img = inner_soup.find('img', {'class': 'game-unit_template-image'})
 
     # получаем ссылку на картинку
@@ -22,13 +21,48 @@ def clear_text(url):
     else:
         img = inner_soup.find('a', {'class': 'game-unit_cover-item'})['href']
 
-    return (name.get_text(), text.get_text(), img)
+
+    inner_soup = inner_soup.find('div', {'id': 'specification'})
+    lst_blocks = inner_soup.find_all('div', {'class': 'block mb-3'})
+
+    lst_values = lst_blocks[0].find_all('span', {'class': 'game-unit_chars-value'})
+    hull_armor = lst_values[0].get_text().strip()
+    turret_armor = lst_values[1].get_text().strip()
+    crew = lst_values[3].get_text().strip()
+
+    mobility = ''
+    for i in lst_blocks[1].find_all('span', {'class': 'game-unit_chars-value'}):
+        if i.find('span', {'class': 'show-char-rb'}) is not None:
+            mobility += i.find('span', {'class': 'show-char-rb'}).get_text().strip()
+        elif i.find('span', {'class': 'show-char-rb-mod-ref'}) is not None:
+            mobility += i.find('span', {'class': 'show-char-rb-mod-ref'}).get_text().strip()
+        else:
+            mobility += i.get_text().strip()
+        mobility += ' / '
+
+    mobility = mobility.rstrip(' /т')
+
+    inner_soup = inner_soup.find('table', {'class': 'game-unit_belt-list'})
+    armament = inner_soup.find_all('td')[3].get_text()
+
+    return (name, text, img, hull_armor, turret_armor, crew, mobility, armament)
 
 # создание файлов с танками и сохранение данных в базу данных
 def create_data_base(urls, country):
     """
-    Функция получает название танка(переменная tank_text), информацию о танке(переменная text) и
-    ссылку на картинку(переменная img) из функции clear_text().
+    Функция получает:
+
+    название танка (tank_text),
+    информацию о танке (text),
+    ссылку на картинку (img),
+    бронирование корпуса (hull_armor) в формате: лоб / борт / корма,
+    бронирование башни (turret_armor) в формате: лоб / борт / корма,
+    экипаж (crew),
+    данные о подвижности (mobility) в формате:
+    максимальная скорость вперед / максимальная скорость назад / удельная мощность / мощносит двигателя / масса,
+    бронепробитие основным снарядом на 100 метрах (armament)
+
+    из функции clear_text().
 
     Далее идет закоментированный блок кода, который отвечает за создание файлов с танками.
     Если нужно создать файлы с танками, то создаем вручную папку data_base в корне проекта и в этой папке создаем папки
@@ -43,8 +77,7 @@ def create_data_base(urls, country):
 
     # перебираем ссылки, которые ведут на страницы с информацией о танках
     for url in urls:
-        tank_name, text, img = clear_text(url)
-        tank_name = tank_name.replace('/', '-').replace('"', '').replace('\xa0', ' ').lstrip('◔␙␠␗▃▅▄▄▂▄▀▄◊')
+        tank_name, text, img, hull_armor, turret_armor, crew, mobility, armament = clear_text(url)
 
         # try:
         #     with open(f'data_base/{country}/{tank_name}.txt', 'w') as file:
@@ -78,7 +111,7 @@ def create_data_base(urls, country):
             sql = "INSERT INTO tanks (nametank, image_url) VALUES (%s, %s)"
 
             # Данные для вставки
-            data = (tank_name, img)
+            data = (tank_name, text, img, hull_armor, turret_armor, crew, mobility, armament)
 
             # Выполняем запрос
             cursor.execute(sql, data)
@@ -106,20 +139,25 @@ def get_all_url(soup, country):
     # тут будут все найденные адреса
     urls = []
 
-    # перебираем все теги ссылок, которые есть в разделе
-    for tag in s.select('td:has(a)'):
-        # создаем полный путь до страницы
-        url = 'https://wiki.warthunder.ru/' + tag.find('a')['href']
-        if url not in urls:
-            urls.append(url)
+    lst_rank = s.find_all('tr', {'class': 'wt-tree_rank'})
+    # перебираем все теги ссылок, которые есть в разделе до 5 ранга
+    for i in range(4):
+        s = lst_rank[i]
+        for tag in s.select('td:has(a)'):
+            # создаем полный путь до страницы
+            url = 'https://wiki.warthunder.ru/' + tag.find('a')['href']
+            if url not in urls:
+                urls.append(url)
 
     return urls
 
 
 # теги
+# 'usa', 'germany', 'ussr', 'britain', 'japan', 'china', 'italy', 'france', 'sweden', 'israel'
 countries_attrs = ['ussr']
 
 # нации для папок
+# 'США', 'Германия', 'СССР', 'Великобритания', 'Япония', 'Китай', 'Италия', 'Франция', 'Швеция', 'Израиль',
 countries = ['СССР']
 
 # получаем исходный код страницы
