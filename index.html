@@ -17,11 +17,29 @@
             display: block; /* Чтобы изображения отображались друг под другом */
             margin-bottom: 10px; /* Отступ между изображениями */
         }
+        .fade-in {
+            opacity: 0; /* Начальная прозрачность */
+            transform: translateY(20px); /* Начальное смещение вниз */
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1; /* Конечная прозрачность */
+            transform: translateY(0); /* Конечное положение */
+        }
+        .search {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
-<h1>Поиск по мере набора</h1>
-<input type="text" id="search-input" placeholder="Введите запрос...">
+    <div class="search">
+        <h1>Поиск по мере набора</h1>
+        <input type="text" id="search-input" placeholder="Введите запрос...">
+    </div>
 <div id="results"></div>
 </body>
 <script src="search.js"></script>
