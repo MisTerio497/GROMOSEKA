@@ -5,16 +5,25 @@ async function fetchData() {
         if (!response.ok) {
             throw new Error(`Ошибка HTTP: ${response.status}`);
         }
-        const data = await response.json(); // Преобразуем ответ в JSON
-        return data; // Возвращаем данные
+        
+        const data = await response.json(); // Пытаемся распарсить JSON
+        return data;
     } catch (error) {
-        console.error("Ошибка:", error); // Обработка ошибок
+        console.error("Ошибка:", error);
+        return []; // Возвращаем пустой массив, если произошла ошибка
     }
 }
 
 // Определяем функцию searchFetchData
 async function searchFetchData() {
     const data = await fetchData(); // Получаем данные
+
+    // Убедимся, что данные успешно получены
+    if (!data || data.length === 0) {
+        console.error('Данные не были загружены или пусты');
+        return;
+    }
+
     const search_input = document.getElementById("search-input");
     const result = document.getElementById("results");
 
@@ -75,12 +84,16 @@ async function sendDataToServer(item) {
             throw new Error(`Ошибка HTTP: ${response.status}`);
         }
 
-        const result = await response.json(); // Получаем ответ от сервера
-        console.log("Данные успешно отправлены:", result);
+        // Логируем ответ как текст перед парсингом
+        const textResponse = await response.text();
+        console.log(textResponse);
+        // Пытаемся распарсить JSON
+        const result = JSON.parse(textResponse); 
     } catch (error) {
         console.error("Ошибка при отправке данных:", error);
     }
 }
+
 
 // Запускаем функцию
 searchFetchData();

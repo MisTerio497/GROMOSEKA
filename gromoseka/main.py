@@ -95,9 +95,10 @@ def create_data_base(urls, country):
 
         # Подключение к базе данных
         try:
+            print("Успешное подключение к базе данных")
             # Устанавливаем соединение
             conn_params = {
-                'dbname': 'postgres',
+                'dbname': 'tanks',
                 'user': 'postgres',
                 'password': 'admin',
                 'host': 'localhost',  # или IP-адрес сервера
@@ -107,20 +108,20 @@ def create_data_base(urls, country):
 
             # Создаем курсор
             cursor = pdo.cursor()
-            # SQL-запрос для вставки данных
-            sql = "INSERT INTO tanks (nametank, image_url) VALUES (%s, %s)"
+            #SQL-запрос для вставки данных
+            sql = "INSERT INTO tanks (nametank, images_url, team, description, hull_armor, tower_armor, mobility) VALUES (%s,%s,%s,%s,%s,%s,%s)"
 
             # Данные для вставки
-            data = (tank_name, text, img, hull_armor, turret_armor, crew, mobility, armament)
+            data = (tank_name, img, crew, text, hull_armor, turret_armor, mobility)
 
             # Выполняем запрос
-            cursor.execute(sql, data)
+            cursor.execute(sql,data)
 
             # Фиксируем изменения в базе данных
             pdo.commit()
 
             # Пример выполнения SELECT-запроса для проверки данных
-            cursor.execute("SELECT * FROM tanks")
+            cursor.execute("SELECT id,nametank,images_url FROM tanks")
             result = cursor.fetchall()
             src = []
             # Выводим результаты
@@ -131,6 +132,9 @@ def create_data_base(urls, country):
 
         except psycopg2.Error as e:
             print(f"Ошибка подключения к базе данных: {e}")
+            break
+
+
 # получаем ссылки, которые ведут на страницы с информацией о танках
 def get_all_url(soup, country):
     # находим раздел с танками определенной нации по атрибуту(нации)
