@@ -27,6 +27,9 @@ HAKATON site
    ```
 5. Копируем базу данных из файла 'dump.sql'
    ```
+   docker-compose exec db pg_dump -U postgres -d tanks -f /tmp/dump.sql
+   docker-compose cp db:/tmp/dump.sql ./dump.sql
+   
    docker-compose cp ./dump.sql db:/tmp/dump.sql
    docker-compose exec db psql -U postgres -d tanks -f /tmp/dump.sql
    ```

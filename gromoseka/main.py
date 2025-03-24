@@ -109,10 +109,10 @@ def create_data_base(urls, country):
             # Создаем курсор
             cursor = pdo.cursor()
             #SQL-запрос для вставки данных
-            sql = "INSERT INTO tanks (nametank, images_url, team, description, hull_armor, tower_armor, mobility) VALUES (%s,%s,%s,%s,%s,%s,%s)"
+            sql = "INSERT INTO tanks (nametank, images_url, team, description, hull_armor, tower_armor, mobility,armament) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)"
 
             # Данные для вставки
-            data = (tank_name, img, crew, text, hull_armor, turret_armor, mobility)
+            data = (tank_name, img, crew, text, hull_armor, turret_armor, mobility,armament)
 
             # Выполняем запрос
             cursor.execute(sql,data)
