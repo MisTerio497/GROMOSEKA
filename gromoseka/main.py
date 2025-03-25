@@ -26,8 +26,8 @@ def clear_text(url):
     lst_blocks = inner_soup.find_all('div', {'class': 'block mb-3'})
 
     lst_values = lst_blocks[0].find_all('span', {'class': 'game-unit_chars-value'})
-    hull_armor = lst_values[0].get_text().strip()
-    turret_armor = lst_values[1].get_text().strip()
+    hull_armor = lst_values[0].get_text().strip().replace('мм', '')
+    turret_armor = lst_values[1].get_text().strip().replace('мм', '')
     crew = lst_values[3].get_text().strip()
 
     mobility = ''
@@ -37,7 +37,7 @@ def clear_text(url):
         elif i.find('span', {'class': 'show-char-rb-mod-ref'}) is not None:
             mobility += i.find('span', {'class': 'show-char-rb-mod-ref'}).get_text().strip()
         else:
-            mobility += i.get_text().strip()
+            mobility += i.get_text().strip().replace('км/ч', '')
         mobility += ' / '
 
     mobility = mobility.rstrip(' /т')
