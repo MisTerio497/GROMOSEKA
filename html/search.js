@@ -52,6 +52,7 @@ async function searchFetchData() {
                 // Добавляем обработчик события click для картинки
                 img.addEventListener("click", () => {
                     sendDataToServer(item); // Отправляем данные на сервер
+                    window.location.href = `/tanks/${item.id}`; // Переходим на страницу танка
                 });
 
                 div.appendChild(p); // Добавляем <p> в DOM

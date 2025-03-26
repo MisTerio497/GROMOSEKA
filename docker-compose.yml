@@ -13,26 +13,41 @@ services:
     networks:
       - my_network
 
+  flask:
+    build:
+      context: ./html/Tanks
+    container_name: flask_app
+    command: gunicorn --bind 0.0.0.0:5000 "app:create_app()"
+    expose:
+      - "5000"
+    environment:
+     - FLASK_ENV=production
+    volumes:
+      - ./html/Tanks:/flask_app  # Для разработки - монтируем код
+    networks:
+      - my_network
+
+  php:
+    build:
+      context: .
+    container_name: php
+    volumes:
+      - ./html:/var/www/html
+    networks:
+      - my_network
+
   web:
     image: nginx:latest
     container_name: nginx_server
     ports:
       - "80:80"
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
-      - ./fastcgi-php.conf:/etc/nginx/snippets/fastcgi-php.conf
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./html:/var/www/html
     depends_on:
       - php
+      - flask
       - db
-    networks:
-      - my_network
-
-  php:
-    build: .
-    container_name: php
-    volumes:
-      - ./html:/var/www/html  # Монтируем директорию с файлами
     networks:
       - my_network
 

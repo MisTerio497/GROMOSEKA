@@ -1,7 +1,0 @@
-main.py
-pyproject.toml
-gromoseka.egg-info/PKG-INFO
-gromoseka.egg-info/SOURCES.txt
-gromoseka.egg-info/dependency_links.txt
-gromoseka.egg-info/requires.txt
-gromoseka.egg-info/top_level.txt
