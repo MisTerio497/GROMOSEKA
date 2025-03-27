@@ -1,16 +1,25 @@
 <?php
-// Путь к JSON-файлу
-$jsonFile = 'data.json';
+header('Content-Type: text/html; charset=utf-8');
+$pdo = require_once "data.conf.php";
+$id = $_GET['id'] ?? null;
 
-// Чтение содержимого файла
-$jsonData = file_get_contents($jsonFile);
+if (!$id) {
+    http_response_code(400);
+    echo json_encode(['error' => 'ID parameter is required']);
+    exit;
+}
 
-// Декодирование JSON в ассоциативный массив PHP
-$tank = json_decode($jsonData, true);
+// Используем подготовленные выражения для безопасности
+$stmt = $pdo->prepare("SELECT * FROM tanks WHERE id = :id");
+$stmt->bindParam(':id', $id, PDO::PARAM_INT);
+$stmt->execute();
 
-// Проверка на ошибки декодирования
-if (json_last_error() !== JSON_ERROR_NONE) {
-    die('Ошибка парсинга JSON: ' . json_last_error_msg());
+$tank = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$tank) {
+    http_response_code(404);
+    echo json_encode(['error' => 'Tank not found']);
+    exit;
 }
 ?>
 

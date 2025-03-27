@@ -1,59 +1,42 @@
 services:
   db:
     image: postgres:latest
-    container_name: postgresql
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: admin
       POSTGRES_DB: tanks
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
     networks:
-      - my_network
-
-  # flask:
-  #   build:
-  #     context: ./html/Tanks
-  #   container_name: flask_app
-  #   command: gunicorn --bind 0.0.0.0:5000 "app:create_app()"
-  #   expose:
-  #     - "5000"
-  #   environment:
-  #     - FLASK_ENV=production
-  #   volumes:
-  #     - ./html/Tanks/app:/app # Монтируем весь модуль
-  #   networks:
-  #     - my_network
+      - app_network
 
   php:
-    build:
-      context: .
-    container_name: php
+    build: ./php
     volumes:
-      - ./html:/var/www/html
+      - ./php:/var/www/html/api
+      - ./html:/var/www/html/static
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html
     networks:
-      - my_network
+      - app_network
 
-  web:
+  nginx:
     image: nginx:latest
-    container_name: nginx_server
     ports:
       - "80:80"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./html:/var/www/html
+      - ./php:/var/www/html/api
+      - ./html:/var/www/html/static
     depends_on:
       - php
-    #  - flask
       - db
     networks:
-      - my_network
+      - app_network
 
 volumes:
   postgres_data:
 
 networks:
-  my_network:
+  app_network:
     driver: bridge

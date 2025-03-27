@@ -1,7 +1,7 @@
 // Определяем функцию fetchData
 async function fetchData() {
     try {
-        const response = await fetch("search.php");
+        const response = await fetch("/api/search.php");
         if (!response.ok) {
             throw new Error(`Ошибка HTTP: ${response.status}`);
         }
@@ -51,8 +51,8 @@ async function searchFetchData() {
 
                 // Добавляем обработчик события click для картинки
                 img.addEventListener("click", async() => {
-                    await sendDataToServer(item); // Отправляем данные на сервер
-                    window.location.href = `/tanks?id=${item.id}`;                   // Переходим на страницу танка
+                  sendDataToServer(item);
+                  window.location.href = `/tanks?id=${item.id}`;                   // Переходим на страницу танка
                 });
 
                 div.appendChild(p); // Добавляем <p> в DOM
@@ -73,7 +73,7 @@ async function searchFetchData() {
 // Функция для отправки данных на сервер
 async function sendDataToServer(item) {
     try {
-        const response = await fetch("dynamic_html.php", {
+        const response = await fetch("/api/tanks.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -81,17 +81,16 @@ async function sendDataToServer(item) {
             body: JSON.stringify(item),
         });
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+        const text = await response.text(); // Сначала читаем как текст
+        
+        try {
+            const result = text ? JSON.parse(text) : null;
+            console.log("Server response:", result);
+            return result;
+        } catch (e) {
+            console.error("Invalid JSON response:", text);
+            throw new Error(`Invalid JSON: ${text.substring(0, 100)}...`);
         }
-
-        const result = await response.json();
-        console.log("Server response:", result);
-        
-        // Перенаправление после успешной отправки
-        // 
-        
-        return result;
     } catch (error) {
         console.error("Error sending data:", error);
         throw error;
