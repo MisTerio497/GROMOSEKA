@@ -49,7 +49,7 @@ nav{
 
 
 .t-34back{
-    background-image: url("src/img/t-34background.png");
+    background-image: url('/static/img/t-34background.png');
     position: absolute;
     background-position: top center;
     top: 0;
@@ -201,28 +201,28 @@ button:hover {
 }
 
 #su-76{
-    background-image: url("src/img/su-76.jpg");
+    background-image: url('/static/img/su-76.jpg');
     width: auto;
     background-size: cover;
     min-width: 450px;
 }
 
 #t-34{
-    background-image: url("src/img/t-34-76.jpg");
+    background-image: url('/static/img/t-34-76.jpg');
     width: auto;
     background-size: cover;
     min-width: 450px;
 }
 
 #kv-1{
-    background-image: url("src/img/kv-1.jpg");
+    background-image: url("/static/img/kv-1.jpg");
     width: auto;
     background-size: cover;
     min-width: 450px;
 }
 
 #is-1{
-    background-image: url("src/img/is-1.jpeg");
+    background-image: url("/static/img/is-1.jpeg");
     width: auto;
     background-size: cover;
     min-width: 450px;

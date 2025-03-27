@@ -28,7 +28,7 @@ if (!$tank) {
 <head>
   <meta charset="UTF-8">
   <title>Поиск</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -37,7 +37,7 @@ if (!$tank) {
     <header>
       <nav class="searchPage">
         <a href="/" class="header_link">Главная</a>
-        <a href="tanks.html" class="header_link">Танки</a>
+        <a href="/tank" class="header_link">Танки</a>
         <a href="/search" class="header_link" id="line2">Поиск</a>
       </nav>
     </header>

@@ -5,53 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ae82864-9361-455f-8288-cf52e9281585" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/GROMOSEKA1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GROMOSEKA1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/56527c61-adba-4df6-b806-7626943220c1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/56527c61-adba-4df6-b806-7626943220c1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Tanks/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Tanks/.idea/Tanks.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Tanks/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Tanks/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Tanks/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Tanks/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Tanks/app/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Tanks/app/data.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Tanks/app/routes.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Tanks/app/templates/tank.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Tanks/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/composer.phar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/data.conf.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/data.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/data.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/dynamic_html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dump.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_api/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_api/.idea/Tanks.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_api/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_api/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_api/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_api/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask_api/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_api/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask_api/app/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_api/app/templates/tank.html" beforeDir="false" afterPath="$PROJECT_DIR$/flask_api/app/templates/tank.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/search.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/tanks.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/vendor/autoload.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/vendor/composer/ClassLoader.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/vendor/composer/InstalledVersions.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/vendor/composer/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/vendor/composer/autoload_classmap.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/vendor/composer/autoload_namespaces.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/vendor/composer/autoload_psr4.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/vendor/composer/autoload_real.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/vendor/composer/autoload_static.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/vendor/composer/installed.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/vendor/composer/installed.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/style.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/nginx/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/nginx.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/autoload.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/tanks.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/tanks.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +33,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings" notifyAboutMissingVendor="false" synchronizationState="SYNCHRONIZE">
-    <pharConfigPath>$PROJECT_DIR$/html/composer.json</pharConfigPath>
+    <pharConfigPath>$PROJECT_DIR$/php/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="Git.Settings">
@@ -86,12 +60,13 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;Innovations&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/ivan/GROMOSEKA&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/ivan/GROMOSEKA/php&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;http.proxy&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -100,6 +75,18 @@
     ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/php" />
+      <recent name="$PROJECT_DIR$/html" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ComposerRunConfigurationType" factoryName="Composer Script">
+      <option name="pathToComposerJson" value="$PROJECT_DIR$/html/composer.json" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -122,7 +109,8 @@
       <workItem from="1741768541950" duration="3449000" />
       <workItem from="1742378164963" duration="1768000" />
       <workItem from="1743006477186" duration="719000" />
-      <workItem from="1743082042975" duration="311000" />
+      <workItem from="1743082042975" duration="8706000" />
+      <workItem from="1743090860059" duration="2003000" />
     </task>
     <servers />
   </component>
@@ -139,5 +127,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
