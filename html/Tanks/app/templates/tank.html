@@ -1,37 +1,27 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ tank['nametank'] }}</title>
+    <title>{{ tank.nametank }}</title>
+    <link rel="stylesheet" href="/static/css/tank.css">
 </head>
 <body>
-    <h1>{{ tank['nametank'] }}</h1>
-
-    <!-- Изображение танка -->
-    <img src="{{ tank['images_url'] }}" alt="{{ tank['nametank'] }}" width="400">
-
-    <h2>Описание</h2>
-    <p>{{ tank['description'] }}</p>
-
-    <h2>Характеристики</h2>
-    <table border="1">
-        <tr>
-            <th>Экипаж</th>
-            <td>{{ tank['team'] }}</td>
-        </tr>
-        <tr>
-            <th>Бронирование корпуса</th>
-            <td>{{ tank['hull_armor'] }}</td>
-        </tr>
-        <tr>
-            <th>Бронирование башни</th>
-            <td>{{ tank['tower_armor'] }}</td>
-        </tr>
-        <tr>
-            <th>Мобильность</th>
-            <td>{{ tank['mobility'] }}</td>
-        </tr>
-    </table>
+    <div class="tank-container">
+        <h1>{{ tank.nametank }}</h1>
+        <img src="{{ tank.images_url }}" alt="{{ tank.nametank }}">
+        
+        <div class="tank-info">
+            <h2>Характеристики</h2>
+            <table>
+                <tr><th>Страна:</th><td>{{ tank.country }}</td></tr>
+                <tr><th>Уровень:</th><td>{{ tank.level }}</td></tr>
+                <tr><th>Класс:</th><td>{{ tank.class }}</td></tr>
+            </table>
+            
+            <h2>Описание</h2>
+            <p>{{ tank.description }}</p>
+        </div>
+        
+        <a href="/" class="back-button">На главную</a>
+    </div>
 </body>
 </html>

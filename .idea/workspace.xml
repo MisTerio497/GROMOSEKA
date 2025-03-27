@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ae82864-9361-455f-8288-cf52e9281585" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/56527c61-adba-4df6-b806-7626943220c1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/56527c61-adba-4df6-b806-7626943220c1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/56527c61-adba-4df6-b806-7626943220c1/storage_v2/_src_/database/tanks.yWiQBg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/56527c61-adba-4df6-b806-7626943220c1/storage_v2/_src_/database/tanks.yWiQBg/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backup.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start.sh" beforeDir="false" afterPath="$PROJECT_DIR$/start.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Tanks/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/html/Tanks/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Tanks/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/html/Tanks/app/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Tanks/app/templates/tank.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/Tanks/app/templates/tank.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nginx/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/nginx.conf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +83,7 @@
       <workItem from="1741604429639" duration="883000" />
       <workItem from="1741768541950" duration="3449000" />
       <workItem from="1742378164963" duration="1768000" />
+      <workItem from="1743006477186" duration="719000" />
     </task>
     <servers />
   </component>

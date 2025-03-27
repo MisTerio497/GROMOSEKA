@@ -50,9 +50,9 @@ async function searchFetchData() {
                 div.className = "fade-in";
 
                 // Добавляем обработчик события click для картинки
-                img.addEventListener("click", () => {
-                    sendDataToServer(item); // Отправляем данные на сервер
-                    window.location.href = `/tanks/${item.id}`; // Переходим на страницу танка
+                img.addEventListener("click", async() => {
+                    await sendDataToServer(item); // Отправляем данные на сервер
+                    window.location.href = `/tanks?id=${item.id}`;                   // Переходим на страницу танка
                 });
 
                 div.appendChild(p); // Добавляем <p> в DOM
@@ -74,27 +74,30 @@ async function searchFetchData() {
 async function sendDataToServer(item) {
     try {
         const response = await fetch("dynamic_html.php", {
-            method: "POST", // Используем метод POST
+            method: "POST",
             headers: {
-                "Content-Type": "application/json", // Указываем тип содержимого
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify(item), // Отправляем данные в формате JSON
+            body: JSON.stringify(item),
         });
 
         if (!response.ok) {
-            throw new Error(`Ошибка HTTP: ${response.status}`);
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        // Логируем ответ как текст перед парсингом
-        const textResponse = await response.text();
-        console.log(textResponse);
-        // Пытаемся распарсить JSON
-        const result = JSON.parse(textResponse); 
+        const result = await response.json();
+        console.log("Server response:", result);
+        
+        // Перенаправление после успешной отправки
+        // 
+        
+        return result;
     } catch (error) {
-        console.error("Ошибка при отправке данных:", error);
+        console.error("Error sending data:", error);
+        throw error;
     }
 }
 
 
 // Запускаем функцию
-searchFetchData();
+document.addEventListener("DOMContentLoaded", searchFetchData);

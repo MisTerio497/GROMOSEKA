@@ -1,31 +1,30 @@
-from flask import render_template
-from app import app
+from flask import Blueprint, request, render_template, jsonify
 import json
-import os
 
-# Функция загрузки данных из JSON-файла
-def load_tanks_data():
-    # Убедимся, что путь к tanks.json указан правильно
-    json_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'tanks.json')
+bp = Blueprint('tanks', __name__)
 
-    if not os.path.exists(json_path):
-        raise FileNotFoundError(f"Файл {json_path} не найден")
-
-    with open(json_path, 'r', encoding='utf-8') as file:
-        data = json.load(file)
-
-    return data['tanks']
-
-# Удаляем дублирующийся маршрут, если он уже есть
-if 'tank_details' in app.view_functions:
-    app.view_functions.pop('tank_details')
-
-@app.route('/tanks/<int:tank_id>')
-def tank_details(tank_id):
-    tanks = load_tanks_data()
-    tank = next((tank for tank in tanks if tank['id'] == tank_id), None)
-
-    if not tank:
-        return "Танк не найден", 404
-
-    return render_template('tank.html', tank=tank)
+# Загрузка данных о танках (примерная реализация)
+@bp.route('/tanks', methods=['GET', 'POST'])
+def tank_details():
+    if request.method == 'POST':
+        try:
+            # Получаем данные из JSON запроса
+            tank_data = request.get_json()
+            
+            if not tank_data:
+                return jsonify({"error": "No data provided"}), 400
+            
+            # Здесь можно добавить валидацию данных
+            if 'nametank' not in tank_data:
+                return jsonify({"error": "Invalid tank data"}), 400
+            
+            # Для демонстрации просто рендерим шаблон с полученными данными
+            return render_template('tank.html', tank=tank_data)
+            
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+    
+    elif request.method == 'GET':
+        # Обработка GET запроса (если нужно)
+        # Можно вернуть форму или перенаправить
+        return render_template('tank_search.html')

@@ -13,19 +13,19 @@ services:
     networks:
       - my_network
 
-  flask:
-    build:
-      context: ./html/Tanks
-    container_name: flask_app
-    command: gunicorn --bind 0.0.0.0:5000 "app:create_app()"
-    expose:
-      - "5000"
-    environment:
-     - FLASK_ENV=production
-    volumes:
-      - ./html/Tanks:/flask_app  # Для разработки - монтируем код
-    networks:
-      - my_network
+  # flask:
+  #   build:
+  #     context: ./html/Tanks
+  #   container_name: flask_app
+  #   command: gunicorn --bind 0.0.0.0:5000 "app:create_app()"
+  #   expose:
+  #     - "5000"
+  #   environment:
+  #     - FLASK_ENV=production
+  #   volumes:
+  #     - ./html/Tanks/app:/app # Монтируем весь модуль
+  #   networks:
+  #     - my_network
 
   php:
     build:
@@ -46,7 +46,7 @@ services:
       - ./html:/var/www/html
     depends_on:
       - php
-      - flask
+    #  - flask
       - db
     networks:
       - my_network
