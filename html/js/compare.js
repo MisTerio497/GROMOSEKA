@@ -24,6 +24,22 @@ function initElements() {
 
 // Вызываем инициализатор
 initElements();
+async function fetchData(item) {
+    try {
+      var value = "/api/search.php?+"+item;
+        const response = await fetch(value);
+        if (!response.ok) {
+            throw new Error(`Ошибка HTTP: ${response.status}`);
+        }
+        const data = await response.json(); // Пытаемся распарсить JSON
+        return data;
+    } catch (error) {
+        console.error("Ошибка:", error);
+        return []; // Возвращаем пустой массив, если произошла ошибка
+    }
+}
+
+// Определяем функцию searchFetchData
 
 // Асинхронная функция сравнения танков. Красит нужные элементы таблицы в зеленый цвет
 async function compareTanks(t1, t2) {
@@ -153,6 +169,9 @@ async function setSessionItem(key, value) {
 
 // Асинхронные функции для работы с данными
 async function getInfoName(nametank) {
+  let data = await fetchData(`nametank=${nametank}`)
+  console.log(data)
+  return data
     /*
         Функция получает название танка.
         По этому названию нужно получить данные из базы со всеми полями(id, nametank, images_url и т.д.).
@@ -178,6 +197,9 @@ async function getInfoName(nametank) {
 }
 
 async function getInfoID(id) {
+  let data = await fetchData(`id=${id}`)
+  console.log(data)
+  return data
     /*
         Функция получает айдишник танка.
         По этому айдишнику нужно получить данные из базы со всеми полями(id, nametank, images_url и т.д.).
