@@ -38,7 +38,7 @@ if (!$tank) {
     <header>
       <nav class="searchPage">
         <a href="/" class="header_link">Главная</a>
-        <a href="/tank" class="header_link">Танки</a>
+        <a href="/tanks-vs" class="header_link">Танки</a>
         <a href="/search" class="header_link" id="line2">Поиск</a>
       </nav>
     </header>

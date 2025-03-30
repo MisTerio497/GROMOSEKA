@@ -18,8 +18,6 @@ services:
     volumes:
       - ./php:/var/www/html/api
       - ./html:/var/www/html/static
-    environment:
-      - APACHE_DOCUMENT_ROOT=/var/www/html
     container_name: php-fpm
     networks:
       - app_network
