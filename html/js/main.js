@@ -23,3 +23,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
   showSlide(currentIndex);
 });
+// Определяем функцию fetchData
+async function fetchData() {
+  try {
+    const response = await fetch("/api/search.php");
+    if (!response.ok) {
+      throw new Error(`Ошибка HTTP: ${response.status}`);
+    }
+
+    const data = await response.json(); // Пытаемся распарсить JSON
+    return data;
+  } catch (error) {
+    console.error("Ошибка:", error);
+    return []; // Возвращаем пустой массив, если произошла ошибка
+  }
+}
+
+// Определяем функцию searchFetchData
+async function searchFetchData() {
+  const data = await fetchData(); // Получаем данные
+
+  // Убедимся, что данные успешно получены
+  if (!data || data.length === 0) {
+    console.error('Данные не были загружены или пусты');
+    return;
+  }
+}
+
+// Запускаем функцию
+searchFetchData();

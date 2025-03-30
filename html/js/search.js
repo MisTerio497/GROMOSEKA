@@ -51,7 +51,7 @@ async function searchFetchData() {
 
                 // Добавляем обработчик события click для картинки
                 img.addEventListener("click", async() => {
-                  window.location.href = `/tanks?id=${item.id}`;                   // Переходим на страницу танка
+                  window.location.href = `/tanks-vs?id=${item.id}`;                   // Переходим на страницу танка
                 });
 
                 div.appendChild(p); // Добавляем <p> в DOM
@@ -69,33 +69,6 @@ async function searchFetchData() {
     });
 }
 
-// Функция для отправки данных на сервер
-async function sendDataToServer(item) {
-    try {
-        const response = await fetch("/api/tanks.php", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(item),
-        });
-
-        const text = await response.text(); // Сначала читаем как текст
-        
-        try {
-            const result = text ? JSON.parse(text) : null;
-            console.log("Server response:", result);
-            return result;
-        } catch (e) {
-            console.error("Invalid JSON response:", text);
-            throw new Error(`Invalid JSON: ${text.substring(0, 100)}...`);
-        }
-    } catch (error) {
-        console.error("Error sending data:", error);
-        throw error;
-    }
-}
-
-
 // Запускаем функцию
-document.addEventListener("DOMContentLoaded", searchFetchData);
+searchFetchData();
+

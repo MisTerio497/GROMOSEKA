@@ -18,7 +18,8 @@ $tank = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if (!$tank) {
     http_response_code(404);
-    echo json_encode(['error' => 'Tank not found']);
+    $html = file_get_contents('../static/404.html');
+    echo $html;
     exit;
 }
 ?>

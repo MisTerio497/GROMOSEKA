@@ -1,16 +1,34 @@
 <?php
-header('Content-Type: application/json');
+require_once 'vendor/autoload.php';
 
-$data = json_decode(file_get_contents('php://input'), true);
+$loader = new \Twig\Loader\FilesystemLoader('/var/www/html/static');
+$twig = new \Twig\Environment($loader, [
+    'cache' => 'cache',
+    'debug' => true,
+]);
 
-if (!$data) {
+// Подключение к БД
+$pdo = require_once "data.conf.php";
+$id = $_POST['id'] ?? null;
+
+if (!$id) {
     http_response_code(400);
-    echo json_encode(['error' => 'Invalid data']);
+    echo json_encode(['error' => 'ID parameter is required']);
     exit;
 }
 
-// Сохраняем данные в файл
-file_put_contents('/var/www/html/api/data.json', json_encode($data, JSON_PRETTY_PRINT));
+$stmt = $pdo->prepare("SELECT * FROM tanks WHERE id = :id");
+$stmt->bindParam(':id', $id, PDO::PARAM_INT);
+$stmt->execute();
+    
+$tank = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+if (!$tank) {
+    http_response_code(404);
+    exit;
+}
 
-echo json_encode(['status' => 'success']);
-?>
+// Правильная передача данных в шаблон
+echo $twig->render('404.html', [
+    'tank' => $tank // Передаем весь массив как 'tank'
+]);

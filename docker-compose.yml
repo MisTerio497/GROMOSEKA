@@ -9,31 +9,18 @@ services:
      - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    container_name: postgresql
     networks:
       - app_network
-
-
-
-#  flask:
-#    build:
-#      context: ./flask_api
-#    container_name: flask_app
-#    command: gunicorn --bind 0.0.0.0:5000 "app:create_app()"
-#    expose:
-#      - "5000"
-#    environment:
-#      - FLASK_ENV=production
-#    volumes:
-#      - ./flask_api:/var/www/html/flask_app
-#    networks:
-#      - app_network
 
   php:
     build: ./php
     volumes:
       - ./php:/var/www/html/api
+      - ./html:/var/www/html/static
     environment:
       - APACHE_DOCUMENT_ROOT=/var/www/html
+    container_name: php-fpm
     networks:
       - app_network
 
@@ -46,8 +33,8 @@ services:
       - ./html:/var/www/html/static
     depends_on:
       - php
-#      - flask
       - db
+    container_name: nginx_server
     networks:
       - app_network
 
