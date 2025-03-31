@@ -6,9 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="6ae82864-9361-455f-8288-cf52e9281585" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/56527c61-adba-4df6-b806-7626943220c1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/56527c61-adba-4df6-b806-7626943220c1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/56527c61-adba-4df6-b806-7626943220c1/storage_v2/_src_/database/tanks.yWiQBg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/56527c61-adba-4df6-b806-7626943220c1/storage_v2/_src_/database/tanks.yWiQBg/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/js/compare.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/js/compare.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/js/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/js/search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/table-vs.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/table-vs.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

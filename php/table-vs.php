@@ -14,7 +14,6 @@ try {
 }
 
 try {
-    $sql = "SELECT * FROM tanks";
     $params = [];
     
     if ($id !== null) {
