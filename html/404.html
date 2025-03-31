@@ -1,48 +1,64 @@
-{# 404.html #}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <title>Поиск</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
+<style>
+        #results div {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+        }
+        #results div:hover {
+            background-color: #f0f0f0;
+        }
+        #results img {
+            display: block; /* Чтобы изображения отображались друг под другом */
+            margin-bottom: 10px; /* Отступ между изображениями */
+        }
+        .fade-in {
+            opacity: 0; /* Начальная прозрачность */
+            transform: translateY(20px); /* Начальное смещение вниз */
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1; /* Конечная прозрачность */
+            transform: translateY(0); /* Конечное положение */
+        }
+        .search {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+    </style>
 <body>
-    <header>
-      <nav class="searchPage">
-        <a href="/" class="header_link">Главная</a>
-        <a href="/tanks-vs" class="header_link">Танки</a>
-        <a href="/search" class="header_link" id="line2">Поиск</a>
-      </nav>
-    </header>
-    <h1>{{ tank.nametank }}</h1>
+<header>
+  <nav class="searchPage">
+    <a href="/" class="header_link">Главная</a>
+    <a href="/tanks-vs" class="header_link">Танки</a>
+    <a href="/search" class="header_link" id="line2">Поиск</a>
+  </nav>
+</header>
 
-    <!-- Изображение танка -->
-    <img src= "{{ tank.images_url }}" alt="{{ tank.nametank }}" width="400">
-
-    <h2>Описание</h2>
-    <p>{{ tank.description }}</p>
-
-    <h2>Характеристики</h2>
-    <table border="1">
-        <tr>
-            <th>Экипаж</th>
-            <td>{{ tank.team }}</td>
-        </tr>
-        <tr>
-            <th>Бронирование корпуса</th>
-            <td>{{ tank.hull_armor }}</td>
-        </tr>
-        <tr>
-            <th>Бронирование башни</th>
-            <td>{{ tank.tower_armor }}</td>
-        </tr>
-        <tr>
-            <th>Мобильность</th>
-            <td>{{ tank.mobility }}</td>
-        </tr>
-    </table>
+<main class="main_container">
+  <div class="tanks-search-container">
+    <h1 class="tanks-search-title">Поиск</h1>
+      <input type="text"
+             class="tanks-search-input"
+             id="search-input"
+             placeholder="Введите поисковый запрос..."
+             name="q"
+             aria-label="Поиск по сайту">
+  </div>
+  <div id="results"></div>
+</main>
+<script src="js/sex.js"></script>
 </body>
 </html>

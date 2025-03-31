@@ -26,7 +26,7 @@ function initElements() {
 initElements();
 async function fetchData(item) {
     try {
-      var value = "/api/search.php?+"+item;
+      var value = "/api/search.php?"+item;
         const response = await fetch(value);
         if (!response.ok) {
             throw new Error(`Ошибка HTTP: ${response.status}`);
@@ -56,8 +56,8 @@ async function compareTanks(t1, t2) {
 
         // Параллельное выполнение парсеров
         const [turret_1, turret_2] = await Promise.all([
-            parseArmor(t1.turret_armor),
-            parseArmor(t2.turret_armor)
+            parseArmor(t1.tower_armor),
+            parseArmor(t2.tower_armor)
         ]);
 
         const c_1 = parseInt(t1.team.replace(/[^0-9]/g, ''));
@@ -125,7 +125,7 @@ async function fillTd(tank) {
         target[0].textContent = tank.nametank;
 
         const hull = tank.hull_armor.trim().match(regex);
-        const turret = tank.turret_armor.trim().match(regex);
+        const turret = tank.tower_armor.trim().match(regex);
         const mob = tank.mobility.trim().match(regex);
 
         target[1].textContent = `${hull[0]} мм`;
@@ -169,9 +169,9 @@ async function setSessionItem(key, value) {
 
 // Асинхронные функции для работы с данными
 async function getInfoName(nametank) {
-  let data = await fetchData(`nametank=${nametank}`)
-  console.log(data)
-  return data
+  const data = await fetchData(`nametank=${nametank}`);
+ 
+  return data[0];
     /*
         Функция получает название танка.
         По этому названию нужно получить данные из базы со всеми полями(id, nametank, images_url и т.д.).
@@ -184,7 +184,7 @@ async function getInfoName(nametank) {
             "description": "...",
             "images_url": "https://static.encyclopedia.warthunder.com/images/ussr_bt_5.png",
             "hull_armor": "13 / 15 / 13",
-            "turret_armor": "20 / 15 / 15",
+            "tower_armor": "20 / 15 / 15",
             "team": "3 человека",
             "mobility": " 51 / 10 / 34,5 / 400 / 11,6",
             "armament": "67"
@@ -197,9 +197,9 @@ async function getInfoName(nametank) {
 }
 
 async function getInfoID(id) {
-  let data = await fetchData(`id=${id}`)
-  console.log(data)
-  return data
+  let data = await fetchData(`id=${id}`);
+
+  return data[0];
     /*
         Функция получает айдишник танка.
         По этому айдишнику нужно получить данные из базы со всеми полями(id, nametank, images_url и т.д.).
@@ -212,7 +212,7 @@ async function getInfoID(id) {
             "description": "...",
             "images_url": "https://static.encyclopedia.warthunder.com/images/ussr_bt_5.png",
             "hull_armor": "13 / 15 / 13",
-            "turret_armor": "20 / 15 / 15",
+            "tower_armor": "20 / 15 / 15",
             "team": "3 человека",
             "mobility": " 51 / 10 / 34,5 / 400 / 11,6",
             "armament": "67"
@@ -234,8 +234,8 @@ async function navigateTank(key, direction) {
         let newId;
         if (currentTank) {
             newId = currentTank.id + (direction === 'next' ? 1 : -1);
-            if (newId > 3) newId = 1; // Здесь 3 нужно заменить на максимальный ID из базы
-            if (newId < 1) newId = 3; // Здесь 3 нужно заменить на максимальный ID из базы
+            if (newId > 87) newId = 1; // Здесь 3 нужно заменить на максимальный ID из базы
+            if (newId < 1) newId = 87; // Здесь 3 нужно заменить на максимальный ID из базы
         } else {
             newId = 1;
         }
