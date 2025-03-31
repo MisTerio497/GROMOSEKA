@@ -3,7 +3,7 @@ header("Content-Type: application/json");
 
 try {
     $pdo = new PDO("pgsql:host=db;dbname=tanks", "postgres", "admin");
-    $stmt = $pdo->query("SELECT id, nametank, images_url FROM tanks");
+    $stmt = $pdo->query("SELECT * FROM tanks");
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
     echo json_encode($data ?: []); // Всегда возвращаем массив, даже пустой
