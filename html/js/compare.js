@@ -131,8 +131,8 @@ async function fillTd(tank) {
         target[1].textContent = `${hull[0]} мм`;
         target[2].textContent = `${hull[1]} мм`;
         target[3].textContent = `${hull[2]} мм`;
-        target[4].textContent = `${turret[1]} мм`;
-        target[5].textContent = `${turret[0]} мм`;
+        target[4].textContent = `${turret[0]} мм`;
+        target[5].textContent = `${turret[1]} мм`;
         target[6].textContent = `${turret[2]} мм`;
         target[7].textContent = tank.team;
         target[8].textContent = `${mob[0]} км/ч`;
