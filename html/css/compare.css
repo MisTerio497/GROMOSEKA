@@ -1,0 +1,154 @@
+body {
+    margin: 0;
+    font-family: "Anonymous Pro", monospace;
+    background-color: #F3F3F3;
+}
+
+header {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(0, 0, 0);
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#line {
+    position: relative;
+}
+
+.header_link {
+    margin: auto;
+}
+
+.line::after {
+    content: "";
+    position: absolute;
+    left: 25%;
+    bottom: 23px;
+    width: 50%;
+    height: 3px;
+    background-color: white;
+}
+
+a {
+    padding: 30px;
+    text-decoration: none;
+    color: white;
+    font-size: 36px;
+}
+
+.main-conteiner {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.tanks {
+    display: flex;
+    align-items: center;
+}
+
+
+.vs {
+    display: inline-block;
+    margin: 35px;
+}
+
+.vs>span {
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.tank1 {
+    display: inline-block;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+    padding: 15px;
+    font-size: 18px;
+}
+
+.tank2 {
+    display: inline-block;
+    border-collapse: collapse;
+}
+
+.armor {
+    text-align: center;
+}
+
+.arm>td {
+    background-color: rgb(230, 230, 230);
+}
+
+#searchQuery1 {
+    height: 40px;
+    font-size: 14px;
+}
+
+#search-but1 {
+    height: 45px;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+#searchQuery2 {
+    height: 40px;
+    font-size: 14px;
+}
+
+#search-but2 {
+    height: 45px;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.searchForm {
+    display: flex;
+    justify-content: center;
+}
+
+.search {
+    text-align: center;
+    padding: 25px;
+}
+
+
+
+.arrow-button {
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#but1 {
+    transform: scaleX(-1);
+    padding-left: 20px;
+}
+
+#but2 {
+    padding-left: 20px;
+}
+
+#but3 {
+    transform: scaleX(-1);
+    padding-left: 20px;
+}
+
+#but4 {
+    padding-left: 20px;
+}
+
+#crc1-img>img {
+    width: 400px;
+}
+
+#crc2-img>img {
+    width: 400px;
+}

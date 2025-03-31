@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Поиск</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<style>
+        #results div {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+        }
+        #results div:hover {
+            background-color: #f0f0f0;
+        }
+        #results img {
+            display: block; /* Чтобы изображения отображались друг под другом */
+            margin-bottom: 10px; /* Отступ между изображениями */
+        }
+        .fade-in {
+            opacity: 0; /* Начальная прозрачность */
+            transform: translateY(20px); /* Начальное смещение вниз */
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1; /* Конечная прозрачность */
+            transform: translateY(0); /* Конечное положение */
+        }
+        .search {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+    </style>
+<body>
+<header>
+  <nav class="searchPage">
+    <a href="/" class="header_link">Главная</a>
+    <a href="/tanks-vs" class="header_link">Танки</a>
+    <a href="/search" class="header_link" id="line2">Поиск</a>
+  </nav>
+</header>
+
+<main class="main_container">
+  <div class="tanks-search-container">
+    <h1 class="tanks-search-title">Поиск</h1>
+      <input type="text"
+             class="tanks-search-input"
+             id="search-input"
+             placeholder="Введите поисковый запрос..."
+             name="q"
+             aria-label="Поиск по сайту">
+  </div>
+  <div id="results"></div>
+</main>
+<script src="js/search.js"></script>
+</body>
+</html>

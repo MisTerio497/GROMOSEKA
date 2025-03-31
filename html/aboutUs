@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О проекте</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fff;
+            color: #000;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #000;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 40px;
+            font-size: 1.4em;
+            padding-left: 15px;
+        }
+
+        .team-members {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+
+        .team-member {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            width: 250px;
+            margin: 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border: 1px solid #eee;
+        }
+
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+            margin-bottom: 50px;
+        }
+
+        .tech-badge {
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            border: 1px solid #ddd;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>О проекте</h1>
+
+        <p>Мы — <span class="highlight">«Диванные Хакеры»</span>, команда из трёх энтузиастов, которые решили оживить
+            историю советской бронетехники в цифровом формате. Наш проект создан в рамках <span
+                class="highlight">Всероссийского молодежного форума «КОГРАФ»</span> и посвящён танкам Великой
+            Отечественной войны.</p>
+
+        <p>За месяц разработки мы собрали и систематизировали данные о советских танках, чтобы:</p>
+        <ul>
+            <li>Показать подробные характеристики каждой модели</li>
+            <li>Дать возможность сравнивать их между собой</li>
+            <li>Сохранить память о технике, которая помогла победить</li>
+        </ul>
+
+        <h2>Технологии которые мы использовали</h2>
+        <div class="tech-badges">
+            <div class="tech-badge">Python Flask</div>
+            <div class="tech-badge">BeautifulSoup</div>
+            <div class="tech-badge">PHP</div>
+            <div class="tech-badge">PostgreSQL</div>
+            <div class="tech-badge">HTML5</div>
+            <div class="tech-badge">CSS3</div>
+            <div class="tech-badge">JavaScript</div>
+            <div class="tech-badge">Docker</div>
+        </div>
+
+        <p>Спасибо организаторам <span class="highlight">хакатона «КОГРАФ»</span> за возможность участия.</p>
+
+        <p style="margin-top: 50px; font-style: italic;">
+            С любовью к истории и технологиям, команда <span class="highlight">«Диванные Хакеры»</span> © 2025
+        </p>
+    </div>
+</body>
+
+</html>

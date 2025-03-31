@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Сравнение танков</title>
+    <link rel="stylesheet" href="/css/compare.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="searchPage">
+            <a href="/" class="header_link">Главная</a>
+            <a href="/tanks-vs" class="header_link">Танки</a>
+            <a href="/search" class="header_link" id="line2">Поиск</a>
+        </nav>
+    </header>
+
+    <div class="main-conteiner">
+        <div class="tanks">
+            <table class="tank1">
+                <tr>
+                    <td colspan="2" id="crc1-img"></td>
+                </tr>
+                <tr>
+                    <td class="search" colspan="2">
+
+                        <form class="searchForm" id="search1" method="post">
+                            <button type="button" class="arrow-button" id="but1" onclick="showPrevTank1()">➜</button>
+                            <input type="text" id="searchQuery1" name="t1" placeholder="Введите название танка">
+                            <button type="submit" id="search-but1">Искать</button>
+                            <button type="button" class="arrow-button" id="but2" onclick="showNextTank1()">➜</button>
+                        </form>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>Танк</td>
+                    <td id="crc1-0"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="arm">
+                    <td class="armor" colspan="2">Бронирование корпуса</td>
+                </tr>
+                <tr class="arm">
+                    <td>Лоб</td>
+                    <td id="crc1-1"></td>
+                </tr>
+                <tr class="arm">
+                    <td>Борт</td>
+                    <td id="crc1-2"></td>
+                </tr>
+                <tr class="arm">
+                    <td>Корма</td>
+                    <td id="crc1-3"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="arm">
+                    <td class="armor" colspan="2">Бронирование башни</td>
+                </tr>
+                <tr class="arm">
+                    <td>Лоб</td>
+                    <td id="crc1-4"></td>
+                </tr>
+                <tr class="arm">
+                    <td>Борт</td>
+                    <td id="crc1-5"></td>
+                </tr>
+                <tr class="arm">
+                    <td>Корма</td>
+                    <td id="crc1-6"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Экипаж</td>
+                    <td id="crc1-7"></td>
+                </tr>
+                <tr>
+                    <td>Максимальная скорость вперед</td>
+                    <td id="crc1-8"></td>
+                </tr>
+                <tr>
+                    <td>Максимальная скорость назад</td>
+                    <td id="crc1-9"></td>
+                </tr>
+                <tr>
+                    <td>Удельная мощность</td>
+                    <td id="crc1-10"></td>
+                </tr>
+                <tr>
+                    <td>Мощность двигателя</td>
+                    <td id="crc1-11"></td>
+                </tr>
+                <tr>
+                    <td>Масса</td>
+                    <td id="crc1-12"></td>
+                </tr>
+                <tr>
+                    <td>Бронебробитие на 100м</td>
+                    <td id="crc1-13"></td>
+                </tr>
+            </table>
+            <div class="vs">
+                <span>VS</span>
+            </div>
+            <table class="tank2">
+                <tr>
+                    <td colspan="2" id="crc2-img"></td>
+                </tr>
+                <tr>
+                    <td class="search" colspan="2">
+                        <form class="searchForm" id="search2" method="post">
+                            <button type="button" class="arrow-button" id="but3" onclick="showPrevTank2()">➜</button>
+                            <input type="text" id="searchQuery2" name="t2" placeholder="Введите название танка">
+                            <button type="submit" id="search-but2">Искать</button>
+                            <button type="button" class="arrow-button" id="but4" onclick="showNextTank2()">➜</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Танк</td>
+                    <td id="crc2-0"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="arm">
+                    <td class="armor" colspan="2">Бронирование корпуса</td>
+                </tr>
+                <tr class="arm">
+                    <td>Лоб</td>
+                    <td id="crc2-1"></td>
+                </tr>
+                <tr class="arm">
+                    <td>Борт</td>
+                    <td id="crc2-2"></td>
+                </tr>
+                <tr class="arm">
+                    <td>Корма</td>
+                    <td id="crc2-3"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="arm">
+                    <td class="armor" colspan="2">Бронирование башни</td>
+                </tr>
+                <tr class="arm">
+                    <td>Лоб</td>
+                    <td id="crc2-4"></td>
+                </tr>
+                <tr class="arm">
+                    <td>Борт</td>
+                    <td id="crc2-5"></td>
+                </tr>
+                <tr class="arm">
+                    <td>Корма</td>
+                    <td id="crc2-6"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Экипаж</td>
+                    <td id="crc2-7"></td>
+                </tr>
+                <tr>
+                    <td>Максимальная скорость вперед</td>
+                    <td id="crc2-8"></td>
+                </tr>
+                <tr>
+                    <td>Максимальная скорость назад</td>
+                    <td id="crc2-9"></td>
+                </tr>
+                <tr>
+                    <td>Удельная мощность</td>
+                    <td id="crc2-10"></td>
+                </tr>
+                <tr>
+                    <td>Мощность двигателя</td>
+                    <td id="crc2-11"></td>
+                </tr>
+                <tr>
+                    <td>Масса</td>
+                    <td id="crc2-12"></td>
+                </tr>
+                <tr>
+                    <td>Бронебробитие на 100м</td>
+                    <td id="crc2-13"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/compare.js"></script>
+</body>
+
+</html>

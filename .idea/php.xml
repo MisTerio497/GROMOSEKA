@@ -10,11 +10,6 @@
     <option name="highlightLevel" value="WARNING" />
     <option name="transferred" value="true" />
   </component>
-<<<<<<< HEAD
-  <component name="PhpIncludePathManager">
-    <include_path>
-      <path value="$PROJECT_DIR$/vendor/composer" />
-=======
   <component name="PhpCodeSniffer">
     <phpcs_settings>
       <phpcs_by_interpreter asDefaultInterpreter="true" interpreter_id="fdbc4622-f43a-4be0-8cb5-52626b799bcb" timeout="30000" />
@@ -29,17 +24,11 @@
       <path value="$PROJECT_DIR$/php/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/php/vendor/symfony/polyfill-ctype" />
       <path value="$PROJECT_DIR$/php/vendor/symfony/polyfill-mbstring" />
->>>>>>> Innovations
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.4">
     <option name="suggestChangeDefaultLanguageLevel" value="false" />
   </component>
-<<<<<<< HEAD
-  <component name="PhpStanOptionsConfiguration">
-    <option name="transferred" value="true" />
-  </component>
-=======
   <component name="PhpStan">
     <PhpStan_settings>
       <phpstan_by_interpreter asDefaultInterpreter="true" interpreter_id="fdbc4622-f43a-4be0-8cb5-52626b799bcb" timeout="60000" />
@@ -58,7 +47,6 @@
       <psalm_fixer_by_interpreter asDefaultInterpreter="true" interpreter_id="fdbc4622-f43a-4be0-8cb5-52626b799bcb" timeout="60000" />
     </Psalm_settings>
   </component>
->>>>>>> Innovations
   <component name="PsalmOptionsConfiguration">
     <option name="transferred" value="true" />
   </component>

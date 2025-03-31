@@ -1,0 +1,311 @@
+body{
+    margin:0;
+    font-family: "Anonymous Pro", monospace;
+    background-color: #F3F3F3;
+}
+
+header {
+    position: relative;
+    z-index: 1;
+}
+
+nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#line1 {
+    position: relative;
+}
+
+#line2 {
+    position: relative;
+}
+
+.header_link{
+    margin: auto;
+}
+
+#line1::after {
+    content: "";
+    position: absolute;
+    left: 25%;
+    bottom: 23px;
+    width: 50%;
+    height: 3px;
+    background-color: white;
+}
+
+#line2::after {
+    content: "";
+    position: absolute;
+    left: 25%;
+    bottom: 23px;
+    width: 50%;
+    height: 3px;
+    background-color: white;
+}
+
+
+.t-34back{
+    background-image: url('/static/img/t-34background.png');
+    position: absolute;
+    background-position: top center;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+a{
+    padding: 30px;
+    text-decoration: none;
+    color: white;
+    font-size: 36px;
+}
+
+main {
+    margin-top: 100vh;
+    position: relative;
+    z-index: 2;
+}
+
+.main_container{
+    margin: auto;
+}
+
+.grayback{
+    background-color: #F3F3F3;
+    height: 100px;
+}
+
+.container1{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 115vh;
+    margin-bottom: 270px;
+    gap: 30px;
+
+}
+
+.container2{
+    max-width: 500px;
+    text-align: center;
+    font-size: 30px;
+    flex-wrap: wrap;
+}
+
+.container3{
+    text-align: center;
+    font-size: 30px;
+    height: 1080px;
+    margin: auto;
+}
+
+.redtxt{
+    color: #9D1515;
+}
+
+.line2 {
+    position: relative;
+}
+
+.line2::after {
+    content: "";
+    position: absolute;
+    left: 25%;
+    bottom: -23px;
+    width: 50%;
+    height: 3px;
+    background-color: black;
+}
+
+
+.carousel {
+    position: relative;
+    width: 80%;
+    max-width: 1000px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 640px;
+    object-fit: cover;
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 5px;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.tanks1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+
+}
+
+.art {
+    flex: 1 1 calc(50% - 20px);
+    min-width: 300px;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    display: flex; /* Добавлено */
+    flex-direction: column; /* Добавлено */
+}
+
+
+@media (max-width: 768px) {
+    .art {
+        flex: 1 1 100%;
+    }
+}
+
+#su-76{
+    background-image: url('/static/img/su-76.jpg');
+    width: auto;
+    background-size: cover;
+    min-width: 450px;
+}
+
+#t-34{
+    background-image: url('/static/img/t-34-76.jpg');
+    width: auto;
+    background-size: cover;
+    min-width: 450px;
+}
+
+#kv-1{
+    background-image: url("/static/img/kv-1.jpg");
+    width: auto;
+    background-size: cover;
+    min-width: 450px;
+}
+
+#is-1{
+    background-image: url("/static/img/is-1.jpeg");
+    width: auto;
+    background-size: cover;
+    min-width: 450px;
+}
+
+.tank_search {
+    margin-top: auto;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-decoration: none;
+}
+
+.searchPage{
+    background-color: black;
+}
+
+
+.tanks-search-container {
+    max-width: 1200px;
+    margin: 300px auto;
+    padding: 0 20px;
+}
+
+.tanks-search-input {
+    width: 90%;
+    padding: 15px 20px;
+    font-size: 16px;
+    border: 1px solid #d3d3d3;
+    border-radius: 4px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.tanks-search-input:focus {
+    border-color: #e32119; /* Ferrari red */
+    box-shadow: 0 0 0 2px rgba(227, 33, 25, 0.2);
+}
+
+.tanks-search-button {
+    background-color: #e32119;
+    color: white;
+    border: none;
+    padding: 16px 30px;
+    margin-top: 22px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.tanks-search-button:hover {
+    background-color: #c11b15;
+}
+
+.tanks-search-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: normal;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .ferrari-search-input {
+        padding: 12px 15px;
+    }
+
+    .ferrari-search-button {
+        padding: 12px 20px;
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 1280px) {
+    .t-34back {
+        background-size: cover;
+        background-position: top center;
+        height: 100vh;
+    }
+}
