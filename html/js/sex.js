@@ -1,6 +1,6 @@
 async function fetchData(item) {
     try {
-      var value = "/api/search.php?"+item;
+      var value = "/api/table-vs.php?"+item;
         const response = await fetch(value);
         if (!response.ok) {
             throw new Error(`Ошибка HTTP: ${response.status}`);

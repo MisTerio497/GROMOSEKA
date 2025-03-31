@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ae82864-9361-455f-8288-cf52e9281585" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/GROMOSEKA1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GROMOSEKA1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/56527c61-adba-4df6-b806-7626943220c1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/56527c61-adba-4df6-b806-7626943220c1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/56527c61-adba-4df6-b806-7626943220c1/storage_v2/_src_/database/tanks.yWiQBg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/56527c61-adba-4df6-b806-7626943220c1/storage_v2/_src_/database/tanks.yWiQBg/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/js/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/js/search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/table-vs.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/table-vs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/js/sex.js" beforeDir="false" afterPath="$PROJECT_DIR$/html/js/sex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/data.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/dynamic_html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/tanks.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/tanks.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start.sh" beforeDir="false" afterPath="$PROJECT_DIR$/start.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +33,10 @@
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/html/vendor/composer" />
       <path value="$PROJECT_DIR$/php/vendor/composer" />
+      <path value="$PROJECT_DIR$/php/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/php/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/php/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/php/vendor/symfony/polyfill-mbstring" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -103,6 +109,7 @@
       <workItem from="1743082042975" duration="8706000" />
       <workItem from="1743090860059" duration="2003000" />
       <workItem from="1743095705673" duration="1361000" />
+      <workItem from="1743429924581" duration="2551000" />
     </task>
     <servers />
   </component>
