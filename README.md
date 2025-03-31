@@ -1,2 +1,0 @@
-# GROMOSEKA
-HAKATON site
