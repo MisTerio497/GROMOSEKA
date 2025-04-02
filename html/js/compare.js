@@ -1,7 +1,5 @@
 // Очищаем sessionStorage при загрузке страницы
-window.addEventListener('load', function () {
-    sessionStorage.clear();
-});
+sessionStorage.clear();
 
 // Регулярное выражение
 const regex = /\d+(?:[.,]\d+)?/g;
@@ -119,6 +117,7 @@ async function fillTd(tank) {
         // Получаем доступ к нужной таблице с танком
         const key = tank.key;
         const target = key === 1 ? elements.crc1 : elements.crc2;
+        const table = key === 1 ? document.querySelector('.tank1') : document.querySelector('.tank2');
 
         // Заполняем
         target.img.innerHTML = `<img src="${tank.images_url}" alt="Советский танк">`;
@@ -141,6 +140,9 @@ async function fillTd(tank) {
         target[11].textContent = `${mob[3]} л.с.`;
         target[12].textContent = `${mob[4]} т`;
         target[13].textContent = `${tank.armament} мм`;
+
+        // Добавляем класс элементу
+        table.classList.add('table-visible');
 
         // Параллельно получаем доступ к данным танков
         const [savedT1, savedT2] = await Promise.all([
@@ -237,7 +239,8 @@ async function navigateTank(key, direction) {
             if (newId > 87) newId = 1; // Здесь 3 нужно заменить на максимальный ID из базы
             if (newId < 1) newId = 87; // Здесь 3 нужно заменить на максимальный ID из базы
         } else {
-            newId = 1;
+            if (direction == 'next') newId = 1;
+            else newId = 87;
         }
 
         // Получаем данные танка по вычисленному id
@@ -262,6 +265,8 @@ async function showNextTank2() { await navigateTank(2, 'next'); }
 async function setupFormHandlers() {
     const form1 = document.getElementById('search1');
     const form2 = document.getElementById('search2');
+    const form1_620 = document.getElementById('search1-620');
+    const form2_620 = document.getElementById('search2-620');
 
     // Обработчик для первой формы
     form1.addEventListener('submit', async (event) => {
@@ -285,6 +290,40 @@ async function setupFormHandlers() {
         event.preventDefault(); // Отключаем стандартную отправку
         const tankName = document.getElementById('searchQuery2').value; // Получаем данные из формы
         form2.reset(); // Очищаем форму
+
+        // Получаем данные танка по его названию
+        const dataToSend = await getInfoName(tankName);
+        if (dataToSend) {
+            dataToSend.key = 2;
+            await setSessionItem('t2', dataToSend);
+            await fillTd(dataToSend);
+        } else {
+            alert('Танк не найден. Попробуйте ввести по другому');
+        }
+    });
+
+    // Обработчик для первой адаптивной формы
+    form1_620.addEventListener('submit', async (event) => {
+        event.preventDefault(); // Отключаем стандартную отправку
+        const tankName = document.getElementById('searchQuery1-620').value;
+        form1_620.reset(); // Очищаем форму
+
+        // Получаем данные танка по его названию
+        const dataToSend = await getInfoName(tankName);
+        if (dataToSend) {
+            dataToSend.key = 1;
+            await setSessionItem('t1', dataToSend);
+            await fillTd(dataToSend);
+        } else {
+            alert('Танк не найден. Попробуйте ввести по другому');
+        }
+    });
+
+    // Обработчик для второй адаптивной формы
+    form2_620.addEventListener('submit', async (event) => {
+        event.preventDefault(); // Отключаем стандартную отправку
+        const tankName = document.getElementById('searchQuery2-620').value;
+        form2_620.reset(); // Очищаем форму
 
         // Получаем данные танка по его названию
         const dataToSend = await getInfoName(tankName);
