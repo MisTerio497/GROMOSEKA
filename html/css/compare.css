@@ -4,6 +4,7 @@ body {
     background-color: #F3F3F3;
 }
 
+/* Хэдер */
 header {
     position: relative;
     z-index: 1;
@@ -41,15 +42,18 @@ a {
     font-size: 36px;
 }
 
+
+/* Главный контент */
 .main-conteiner {
     display: flex;
     justify-content: center;
     margin-top: 40px;
 }
 
+/* Таблицы с танками */
 .tanks {
     display: flex;
-    align-items: center;
+    padding: 10px;
 }
 
 
@@ -63,15 +67,113 @@ a {
     font-size: 36px;
 }
 
-.tank1 {
-    display: inline-block;
-    border-collapse: collapse;
-}
-
 td {
     border: 1px solid black;
     padding: 15px;
     font-size: 18px;
+}
+
+@media (max-width: 1024px) {
+    .vs {
+        margin: 33.25px;
+    }
+
+    .vs>span {
+        font-size: 34.2px;
+    }
+
+    td {
+        padding: 12px;
+        font-size: 17.1px;
+    }
+}
+
+@media (max-width: 970px) {
+    .vs {
+        margin: 25px;
+    }
+
+    .vs>span {
+        font-size: 30px;
+    }
+
+    td {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 900px) {
+    .vs {
+        display: none;
+    }
+
+    .tanks {
+        display: flex;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 730px) {
+    td {
+        padding: 11px;
+        font-size: 14px;
+    }
+
+    .tanks {
+        gap: 20px;
+    }
+}
+
+@media(max-width: 470px) {
+    td {
+        padding: 10px;
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 420px) {
+    .tanks {
+        gap: 10px;
+    }
+}
+
+@media(max-width: 405px) {
+    td {
+        padding: 8px;
+        font-size: 11px;
+    }
+}
+
+@media(max-width: 366px) {
+    td {
+        padding: 5px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+@media(max-width: 342px) {
+    .tanks {
+        gap: 5px;
+    }
+
+    .tanks {
+        padding: 5px;
+    }
+}
+
+@media(max-width: 326px) {
+    td {
+        padding: 2px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+.tank1 {
+    display: inline-block;
+    border-collapse: collapse;
 }
 
 .tank2 {
@@ -79,6 +181,8 @@ td {
     border-collapse: collapse;
 }
 
+
+/* Ячейки с броней */
 .armor {
     text-align: center;
 }
@@ -87,6 +191,32 @@ td {
     background-color: rgb(230, 230, 230);
 }
 
+/* Формы */
+.searchForm {
+    display: inline-flex;
+    justify-content: center;
+}
+
+.search {
+    text-align: center;
+    padding: 25px;
+}
+
+@media(max-width: 850px) {
+    .search {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media(max-width: 730px) {
+    .search {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/* Первая форма */
 #searchQuery1 {
     height: 40px;
     font-size: 14px;
@@ -98,6 +228,57 @@ td {
     margin-left: 5px;
 }
 
+#search1-620 {
+    display: none;
+}
+
+@media(max-width: 970px) {
+    #searchQuery1 {
+        height: 35px;
+        font-size: 12px;
+    }
+
+    #search-but1 {
+        height: 40px;
+        font-size: 12px;
+        margin-left: 5px;
+    }
+}
+
+@media(max-width: 630px) {
+    #searchQuery1 {
+        width: 106px;
+    }
+}
+
+@media(max-width: 620px) {
+    #search1 {
+        display: none;
+    }
+
+    #search1-620 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #search1-620>div:nth-child(2) {
+        display: flex;
+        justify-content: center;
+    }
+
+    #search-but1 {
+        margin-left: 0;
+    }
+
+    #searchQuery1-620 {
+        height: 35px;
+        width: 106px;
+        font-size: 12px;
+    }
+}
+
+/* Вторая форма*/
 #searchQuery2 {
     height: 40px;
     font-size: 14px;
@@ -109,40 +290,93 @@ td {
     margin-left: 5px;
 }
 
-.searchForm {
-    display: flex;
-    justify-content: center;
+#search2-620 {
+    display: none;
 }
 
-.search {
-    text-align: center;
-    padding: 25px;
+@media(max-width: 970px) {
+    #searchQuery2 {
+        height: 35px;
+        font-size: 12px;
+    }
+
+    #search-but2 {
+        height: 40px;
+        font-size: 12px;
+        margin-left: 5px;
+    }
 }
 
+@media(max-width: 620px) {
+    #searchQuery2-620 {
+        height: 35px;
+        width: 106px;
+        font-size: 12px;
+    }
 
+    #search-but2 {
+        margin-left: 0;
+    }
 
+    #search2 {
+        display: none;
+    }
+
+    #search2-620 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #search2-620>div:nth-child(2) {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* Кнопки со стрелочками */
 .arrow-button {
     border: none;
     font-size: 30px;
     cursor: pointer;
+    padding-left: 20px;
 }
 
 #but1 {
     transform: scaleX(-1);
-    padding-left: 20px;
-}
-
-#but2 {
-    padding-left: 20px;
 }
 
 #but3 {
     transform: scaleX(-1);
-    padding-left: 20px;
 }
 
-#but4 {
-    padding-left: 20px;
+@media(max-width: 970px) {
+    .arrow-button {
+        font-size: 25px;
+        padding-left: 13px;
+    }
+}
+
+@media(max-width: 730px) {
+    .arrow-button {
+        font-size: 20px;
+        padding-left: 10px;
+    }
+}
+
+@media(max-width: 620px) {
+    .arrow-button {
+        padding-left: 10px;
+    }
+}
+
+/* Изображения танков */
+#crc1-img {
+    text-align: center;
+}
+
+#crc2-img {
+    text-align: center;
 }
 
 #crc1-img>img {
@@ -151,4 +385,120 @@ td {
 
 #crc2-img>img {
     width: 400px;
+}
+
+@media (max-width: 1024px) {
+    #crc1-img>img {
+        width: 380px;
+    }
+
+    #crc2-img>img {
+        width: 380px;
+    }
+}
+
+@media (max-width: 970px) {
+    #crc1-img>img {
+        width: 350px;
+    }
+
+    #crc2-img>img {
+        width: 350px;
+    }
+}
+
+@media (max-width: 850px) {
+    #crc1-img>img {
+        width: 320px;
+    }
+
+    #crc2-img>img {
+        width: 320px;
+    }
+}
+
+@media (max-width: 750px) {
+    #crc1-img>img {
+        width: 280px;
+    }
+
+    #crc2-img>img {
+        width: 280px;
+    }
+}
+
+@media (max-width: 730px) {
+    #crc1-img {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #crc2-img {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 620px) {
+    #crc1-img>img {
+        width: 200px;
+    }
+
+    #crc2-img>img {
+        width: 200px;
+    }
+}
+
+@media (max-width: 470px) {
+    #crc1-img>img {
+        width: 180px;
+    }
+
+    #crc2-img>img {
+        width: 180px;
+    }
+}
+
+@media (max-width: 420px) {
+    #crc1-img>img {
+        width: 160px;
+    }
+
+    #crc2-img>img {
+        width: 160px;
+    }
+}
+
+@media (max-width: 405px) {
+    #crc1-img>img {
+        width: 140px;
+    }
+
+    #crc2-img>img {
+        width: 140px;
+    }
+}
+
+@media (max-width: 314px) {
+    #crc1-img>img {
+        width: 130px;
+    }
+
+    #crc2-img>img {
+        width: 130px;
+    }
+}
+
+.tank1 tr:not(:nth-child(2)),
+.tank2 tr:not(:nth-child(2)) {
+    display: none;
+}
+
+.tank1 tr:nth-child(2),
+.tank2 tr:nth-child(2) {
+    display: table-row;
+}
+
+.table-visible tr {
+    display: table-row !important;
 }
