@@ -1,0 +1,279 @@
+body {
+    margin: 0;
+    font-family: "Anonymous Pro", monospace;
+    background-color: #F3F3F3;
+}
+
+header {
+    position: relative;
+    z-index: 1;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#line1, #line2 {
+    position: relative;
+}
+
+.header_link {
+    margin: auto;
+}
+
+#line1::after, #line2::after {
+    content: "";
+    position: absolute;
+    left: 25%;
+    bottom: 23px;
+    width: 50%;
+    height: 3px;
+    background-color: white;
+}
+
+
+a {
+    padding: 30px;
+    text-decoration: none;
+    color: white;
+    font-size: 36px;
+}
+
+main {
+    margin-top: 100vh;
+    position: relative;
+    z-index: 2;
+}
+
+.main_container {
+    margin: auto;
+}
+.searchPage{
+    background-color: black;
+}
+/* Стили для поисковой системы */
+.tanks-search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 150px auto 50px;
+    padding: 0 20px;
+    width: 90%;
+}
+
+.tanks-search-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+    width: 100%;
+    font-weight: 700;
+}
+
+.tanks-search-input {
+    width: 100%;
+    padding: 18px 25px;
+    font-size: 1.1rem;
+    border: 2px solid #9D1515;
+    border-radius: 0;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    font-family: "Anonymous Pro", monospace;
+    background-color: #fff;
+    color: #333;
+}
+
+.tanks-search-input:focus {
+    border-color: #6D0F0F;
+    box-shadow: 0 0 0 3px rgba(157, 21, 21, 0.2);
+}
+
+/* Стили для плиток с танками */
+#results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+#results div {
+    flex: 1 1 calc(33.333% - 30px);
+    min-width: 300px;
+    max-width: 380px;
+    background-color: #fff;
+    border: 2px solid #9D1515;
+    border-radius: 0;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#results div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+#results p {
+    padding: 15px;
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    background-color: #F3F3F3;
+    border-top: 2px solid #9D1515;
+}
+
+#results img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+#results img:hover {
+    opacity: 0.9;
+}
+
+/* Стиль для сообщения "Ничего не найдено" */
+#results > div:not([class]) {
+    flex: 1 1 100%;
+    text-align: center;
+    padding: 30px;
+    font-size: 1.2rem;
+    color: #9D1515;
+    background-color: #F3F3F3;
+    border: 2px solid #9D1515;
+}
+
+/* Адаптивные стили */
+@media (max-width: 1280px) {
+    .t-34back {
+        background-size: cover;
+        background-position: top center;
+        height: 100vh;
+    }
+}
+
+@media (max-width: 1024px) {
+    #results div {
+        flex: 1 1 calc(50% - 30px);
+    }
+}
+
+@media (max-width: 768px) {
+    .tanks-search-container {
+        margin: 100px auto 40px;
+    }
+    
+    .tanks-search-title {
+        font-size: 2rem;
+    }
+    
+    .tanks-search-input {
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
+    
+    #results {
+        gap: 20px;
+        padding: 15px;
+    }
+    
+    #results div {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    
+    #results p {
+        font-size: 1.1rem;
+        padding: 12px;
+    }
+    
+    #results img {
+        height: 180px;
+    }
+    
+    a {
+        padding: 20px;
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tanks-search-container {
+        margin: 70px auto 30px;
+        padding: 0 15px;
+    }
+    
+    .tanks-search-input {
+        padding: 12px 15px;
+        border-width: 1px;
+    }
+    
+    #results {
+        gap: 15px;
+        padding: 10px;
+    }
+    
+    #results p {
+        font-size: 1rem;
+        padding: 10px;
+    }
+    
+    #results img {
+        height: 150px;
+    }
+    
+    a {
+        padding: 15px;
+        font-size: 22px;
+    }
+    
+    .tanks-search-title {
+        font-size: 1.8rem;
+    }
+}
+/* Добавьте эти стили в search.css */
+
+/* Анимация появления плиток */
+#results div.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#results div.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Изменение обводки на черную */
+#results div {
+    border: 2px solid #000; /* Изменено с #9D1515 на #000 */
+}
+
+#results p {
+    border-top: 2px solid #000; /* Изменено с #9D1515 на #000 */
+}
+
+#results > div:not([class]) {
+    border: 2px solid #000; /* Изменено с #9D1515 на #000 */
+}
+
+.tanks-search-input {
+    border: 2px solid #000; /* Изменено с #9D1515 на #000 */
+}
+
+.tanks-search-input:focus {
+    border-color: #333; /* Изменено с #6D0F0F на #333 */
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2); /* Изменено цвет тени */
+}
