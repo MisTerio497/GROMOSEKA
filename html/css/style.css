@@ -15,11 +15,19 @@ nav{
     justify-content: center;
 }
 
+.linep{
+
+}
+
 #line1 {
     position: relative;
 }
 
 #line2 {
+    position: relative;
+}
+
+#line3{
     position: relative;
 }
 
@@ -47,12 +55,23 @@ nav{
     background-color: white;
 }
 
+#line3::after {
+    content: "";
+    position: absolute;
+    left: 25%;
+    bottom: 23px;
+    width: 50%;
+    height: 3px;
+    background-color: white;
+}
+
+
 
 .t-34back{
-    background-image: url('/static/img/t-34background.png');
+    background-image: url('static/img/t-34background.png');
     position: absolute;
     background-position: top center;
-    top: 0;
+    top: 50px;
     left: 0;
     z-index: -1;
     height: 100vh;
@@ -77,6 +96,7 @@ main {
 
 .main_container{
     margin: auto;
+    display: flex;
 }
 
 .grayback{
@@ -113,11 +133,11 @@ main {
     color: #9D1515;
 }
 
-.line2 {
+.pline {
     position: relative;
 }
 
-.line2::after {
+.pline::after {
     content: "";
     position: absolute;
     left: 25%;
@@ -127,6 +147,19 @@ main {
     background-color: black;
 }
 
+#pline2 {
+    position: relative;
+}
+
+#pline2::after {
+    content: "";
+    position: absolute;
+    left: 25%;
+    bottom: 97.5%;
+    width: 50%;
+    height: 3px;
+    background-color: black;
+}
 
 .carousel {
     position: relative;
@@ -167,6 +200,7 @@ button {
 }
 
 .prev { left: 10px; }
+
 .next { right: 10px; }
 
 button:hover {
@@ -204,28 +238,28 @@ button:hover {
     background-image: url('/static/img/su-76.jpg');
     width: auto;
     background-size: cover;
-    min-width: 450px;
+    min-width: 320px;
 }
 
 #t-34{
     background-image: url('/static/img/t-34-76.jpg');
     width: auto;
     background-size: cover;
-    min-width: 450px;
+    min-width: 320px;
 }
 
 #kv-1{
     background-image: url("/static/img/kv-1.jpg");
     width: auto;
     background-size: cover;
-    min-width: 450px;
+    min-width: 320px;
 }
 
 #is-1{
-    background-image: url("/static/img/is-1.jpeg");
+    background-image: url("static/img/is-1.jpeg");
     width: auto;
     background-size: cover;
-    min-width: 450px;
+    min-width: 320px;
 }
 
 .tank_search {
@@ -242,36 +276,14 @@ button:hover {
 }
 
 
-.tanks-search-container {
-    max-width: 1200px;
-    margin: 300px auto;
-    padding: 0 20px;
+@media (max-width: 1280px) {
+    .t-34back {
+        height: 50vh;
+        background-image: url('static/img/t-34background_mobile.jpg');
+    }
 }
 
-.tanks-search-input {
-    width: 90%;
-    padding: 15px 20px;
-    font-size: 16px;
-    border: 1px solid #d3d3d3;
-    border-radius: 4px;
-    outline: none;
-    transition: all 0.3s ease;
-    box-sizing: border-box;
-}
 
-.tanks-search-input:focus {
-    border-color: #e32119; /* Ferrari red */
-    box-shadow: 0 0 0 2px rgba(227, 33, 25, 0.2);
-}
-
-.tanks-search-title {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
-    font-weight: normal;
-}
-
-/* Адаптивность */
 @media (max-width: 768px) {
     .ferrari-search-input {
         padding: 12px 15px;
@@ -283,11 +295,3 @@ button:hover {
     }
 }
 
-
-@media (max-width: 1280px) {
-    .t-34back {
-        background-size: cover;
-        background-position: top center;
-        height: 100vh;
-    }
-}
