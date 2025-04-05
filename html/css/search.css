@@ -59,15 +59,12 @@ main {
     position: relative;
     z-index: 2;
 }
-
 .main_container{
     margin: auto;
 }
-
 .searchPage{
     background-color: black;
 }
-
 /* Добавьте эти стили в search.css */
 
 /* Основные стили для контейнера поиска */
