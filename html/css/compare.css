@@ -2,6 +2,9 @@ body {
     margin: 0;
     font-family: "Anonymous Pro", monospace;
     background-color: #F3F3F3;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Хэдер */
@@ -515,4 +518,51 @@ td {
     width: 50%;
     height: 3px;
     background-color: white;
+}
+
+/* Футер */
+
+footer {
+    display: flex;
+    background-color: black;
+    margin-top: 40px;
+}
+
+
+.about-footer>a {
+    display: flex;
+    font-size: 16px;
+    padding-right: 0;
+    width: 100px;
+}
+
+.team-footer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: end;
+    margin-right: 30px;
+}
+
+.team-footer>p {
+    display: inline-block;
+    color: white;
+    font-size: 16px;
+    margin: 0;
+}
+
+@media(max-width: 420px) {
+    footer {
+        flex-direction: column;
+    }
+
+    .about-footer {
+        display: flex;
+        justify-content: center;
+    }
+
+    .team-footer {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
 }
