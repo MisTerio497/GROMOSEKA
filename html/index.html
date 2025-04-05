@@ -8,6 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+        model-viewer {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
 </head>
 <body>
 
@@ -29,7 +36,7 @@
             <div class="carousel-container">
                 <img src="img/is-2.jpg" class="slide active">
                 <img src="img/t-34.jpg" class="slide">
-                <img src="img/kv-2.jpg" class="slide">
+                <img src="img/kv-2q.jpg" class="slide">
             </div>
             <button class="next">&#10095;</button>
         </div>
@@ -51,6 +58,14 @@
                 <a href="/tanks?id=56" class="tank_search"> Подробнее</a>
             </article>
         </div>
+        <model-viewer
+                src="path/to/your/model.glb"
+                alt="3D модель"
+                auto-rotate
+                camera-controls
+                ar
+                shadow-intensity="1">
+        </model-viewer>
     </div>
 
 

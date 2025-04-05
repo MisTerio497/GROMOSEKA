@@ -502,3 +502,17 @@ td {
 .table-visible tr {
     display: table-row !important;
 }
+
+#line3{
+    position: relative;
+}
+
+#line3::after {
+    content: "";
+    position: absolute;
+    left: 25%;
+    bottom: 23px;
+    width: 50%;
+    height: 3px;
+    background-color: white;
+}

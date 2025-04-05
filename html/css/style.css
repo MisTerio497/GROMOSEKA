@@ -68,7 +68,7 @@ nav{
 
 
 .t-34back{
-    background-image: url('static/img/t-34background.png');
+    background-image: url('img/t-34background.png');
     position: absolute;
     background-position: top center;
     top: 50px;
@@ -109,8 +109,7 @@ main {
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    margin-top: 115vh;
-    margin-bottom: 270px;
+    margin: 115vh 20px 270px 20px;
     gap: 30px;
 
 }
@@ -223,8 +222,8 @@ button:hover {
     height: 50vh;
     background-size: cover;
     background-position: center;
-    display: flex; /* Добавлено */
-    flex-direction: column; /* Добавлено */
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -235,28 +234,28 @@ button:hover {
 }
 
 #su-76{
-    background-image: url('/static/img/su-76.jpg');
+    background-image: url('/img/su-76.jpg');
     width: auto;
     background-size: cover;
     min-width: 320px;
 }
 
 #t-34{
-    background-image: url('/static/img/t-34-76.jpg');
+    background-image: url('/img/t-34-76.jpg');
     width: auto;
     background-size: cover;
     min-width: 320px;
 }
 
 #kv-1{
-    background-image: url("/static/img/kv-1.jpg");
+    background-image: url("/img/kv-1.jpg");
     width: auto;
     background-size: cover;
     min-width: 320px;
 }
 
 #is-1{
-    background-image: url("static/img/is-1.jpeg");
+    background-image: url("/img/is-1.jpeg");
     width: auto;
     background-size: cover;
     min-width: 320px;
@@ -275,23 +274,44 @@ button:hover {
     background-color: black;
 }
 
-
 @media (max-width: 1280px) {
     .t-34back {
-        height: 50vh;
-        background-image: url('static/img/t-34background_mobile.jpg');
+        top: 96px;
+        height: 100vh;
+        background-image: url('/img/t-34background_mobile.jpg');
     }
+
+    .container1{
+        margin-top: auto;
+    }
+
 }
 
 
 @media (max-width: 768px) {
-    .ferrari-search-input {
-        padding: 12px 15px;
+    .t-34back {
+        top: 160px;
+        height: 50vh;
+        background-image: url('/img/t-34background_mobile.jpg');
     }
 
-    .ferrari-search-button {
-        padding: 12px 20px;
-        width: 100%;
+    .container1{
+        margin-top: auto;
+        margin-bottom: 30px;
     }
+
+    .slide {
+        height: auto;
+    }
+
+
 }
 
+
+@media (max-width: 316px) {
+    .t-34back {
+        top: 288px;
+        height: 50vh;
+        background-image: url('/img/t-34background_mobile.jpg');
+    }
+}
