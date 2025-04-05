@@ -5,20 +5,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>О проекте</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
     <style>
         body {
             font-family: 'Arial', sans-serif;
             background-color: #fff;
             color: #000;
-            line-height: 1.6;
             margin: 0;
             padding: 0;
+        }
+
+        /* Хэдер */
+        header {
+            position: relative;
+            z-index: 1;
+            background-color: rgba(0, 0, 0);
+            font-family: "Anonymous Pro", monospace;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #line {
+            position: relative;
+        }
+
+        .header_link {
+            margin: auto;
+        }
+
+        .line::after {
+            content: "";
+            position: absolute;
+            left: 25%;
+            bottom: 23px;
+            width: 50%;
+            height: 3px;
+            background-color: white;
+        }
+
+        a {
+            padding: 30px;
+            text-decoration: none;
+            color: white;
+            font-size: 36px;
         }
 
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 30px;
+            line-height: 1.6;
         }
 
         h1 {
@@ -72,15 +115,6 @@
             border: 1px solid #ddd;
         }
 
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
         ul {
             padding-left: 20px;
         }
@@ -88,10 +122,49 @@
         li {
             margin-bottom: 8px;
         }
+
+        /* Футер */
+
+        footer {
+            display: flex;
+            background-color: black;
+            margin-top: 40px;
+        }
+
+
+        .about-footer>a {
+            display: flex;
+            font-size: 16px;
+            padding-right: 0;
+            width: 100px;
+        }
+
+        .team-footer {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: end;
+            margin-right: 30px;
+        }
+
+        .team-footer>p {
+            display: inline-block;
+            color: white;
+            font-size: 16px;
+            margin: 0;
+        }
     </style>
 </head>
 
 <body>
+    <header>
+        <nav class="searchPage">
+            <a href="/" class="header_link">Главная</a>
+            <a href="/tanks-vs" class="header_link">Сравнение</a>
+            <a href="/search" class="header_link">Поиск</a>
+        </nav>
+    </header>
+
     <div class="container">
         <h1>О проекте</h1>
 
@@ -109,8 +182,7 @@
 
         <h2>Технологии которые мы использовали</h2>
         <div class="tech-badges">
-            <div class="tech-badge">Python Flask</div>
-            <div class="tech-badge">BeautifulSoup</div>
+            <div class="tech-badge">Python</div>
             <div class="tech-badge">PHP</div>
             <div class="tech-badge">PostgreSQL</div>
             <div class="tech-badge">HTML5</div>
@@ -125,6 +197,15 @@
             С любовью к истории и технологиям, команда <span class="highlight">«Диванные Хакеры»</span> © 2025
         </p>
     </div>
+
+    <footer>
+        <div class="about-footer">
+            <a href="about.html">О проекте</a>
+        </div>
+        <div class="team-footer">
+            <p>© 2025 Диванные хакеры</p>
+        </div>
+    </footer>
 </body>
 
 </html>
