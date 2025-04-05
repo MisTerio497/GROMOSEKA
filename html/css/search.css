@@ -65,9 +65,7 @@ main {
 .searchPage{
     background-color: black;
 }
-/* Добавьте эти стили в search.css */
 
-/* Основные стили для контейнера поиска */
 .tanks-search-container {
     display: flex;
     flex-direction: column;
