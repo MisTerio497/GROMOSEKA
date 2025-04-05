@@ -68,7 +68,7 @@ nav{
 
 
 .t-34back{
-    background-image: url('img/t-34background.png');
+    background-image: url('/img/t-34background.png');
     position: absolute;
     background-position: top center;
     top: 50px;
