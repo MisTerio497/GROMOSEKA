@@ -264,24 +264,6 @@ button:hover {
     box-shadow: 0 0 0 2px rgba(227, 33, 25, 0.2);
 }
 
-.tanks-search-button {
-    background-color: #e32119;
-    color: white;
-    border: none;
-    padding: 16px 30px;
-    margin-top: 22px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.tanks-search-button:hover {
-    background-color: #c11b15;
-}
-
 .tanks-search-title {
     font-size: 24px;
     margin-bottom: 20px;
