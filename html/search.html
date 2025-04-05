@@ -1,34 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <title>Поиск</title>
-  <link rel="stylesheet" href="css/search.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-</head>
-<body>
-<header>
-  <nav class="searchPage">
-    <a href="/" class="header_link">Главная</a>
-    <a href="/tanks-vs" class="header_link">Танки</a>
-    <a href="/search" class="header_link" id="line2">Поиск</a>
-  </nav>
-</header>
-
-<main class="main_container">
-  <div class="tanks-search-container">
-    <h1 class="tanks-search-title">Поиск</h1>
-      <input type="text"
-             class="tanks-search-input"
-             id="search-input"
-             placeholder="Введите поисковый запрос..."
-             name="q"
-             aria-label="Поиск по сайту">
-  </div>
-  <div id="results"></div>
-</main>
-<script src="js/search.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Hakaton</title>
+        <link rel="stylesheet" href="css/search.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <header>
+            <nav class="searchPage">
+                <a href="/" class="header_link">Главная</a>
+                <a href="/tanks-vs" class="header_link">Танки</a>
+                <a href="/search" class="header_link" id="line2">Поиск</a>
+            </nav>
+        </header>
+        <main class="main_container">
+          <div class="tanks-search-container">
+            <h1 class="tanks-search-title">Поиск</h1>
+              <input type="text"
+                     class="tanks-search-input"
+                     id="search-input"
+                     placeholder="Введите поисковый запрос..."
+                     name="q"
+                     aria-label="Поиск по сайту">
+          </div>
+          <div id="results"></div>
+        </main>
+        <script src="js/search.js"></script>
+    </body>
 </html>
