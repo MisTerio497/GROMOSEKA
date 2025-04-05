@@ -1,7 +1,7 @@
-body{
-    margin:0;
+body {
+    margin: 0;
     font-family: "Anonymous Pro", monospace;
-    background-color: #F3F3F3;
+    background-color: #f3f3f3;
 }
 
 header {
@@ -9,14 +9,13 @@ header {
     z-index: 1;
 }
 
-nav{
+nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.linep{
-
+.linep {
 }
 
 #line1 {
@@ -27,11 +26,11 @@ nav{
     position: relative;
 }
 
-#line3{
+#line3 {
     position: relative;
 }
 
-.header_link{
+.header_link {
     margin: auto;
 }
 
@@ -65,10 +64,8 @@ nav{
     background-color: white;
 }
 
-
-
-.t-34back{
-    background-image: url('/img/t-34background.png');
+.t-34back {
+    background-image: url("/img/t-34background.png");
     position: absolute;
     background-position: top center;
     top: 50px;
@@ -78,10 +75,9 @@ nav{
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
-
 }
 
-a{
+a {
     padding: 30px;
     text-decoration: none;
     color: white;
@@ -94,42 +90,41 @@ main {
     z-index: 2;
 }
 
-.main_container{
+.main_container {
     margin: auto;
     display: flex;
 }
 
-.grayback{
-    background-color: #F3F3F3;
+.grayback {
+    background-color: #f3f3f3;
     height: 100px;
 }
 
-.container1{
+.container1 {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
     margin: 115vh 20px 270px 20px;
     gap: 30px;
-
 }
 
-.container2{
+.container2 {
     max-width: 500px;
     text-align: center;
     font-size: 30px;
     flex-wrap: wrap;
 }
 
-.container3{
+.container3 {
     text-align: center;
     font-size: 30px;
     height: 1080px;
     margin: auto;
 }
 
-.redtxt{
-    color: #9D1515;
+.redtxt {
+    color: #9d1515;
 }
 
 .pline {
@@ -198,9 +193,13 @@ button {
     border-radius: 5px;
 }
 
-.prev { left: 10px; }
+.prev {
+    left: 10px;
+}
 
-.next { right: 10px; }
+.next {
+    right: 10px;
+}
 
 button:hover {
     background: rgba(0, 0, 0, 0.8);
@@ -212,8 +211,6 @@ button:hover {
     justify-content: center;
     align-items: center;
     width: 100%;
-
-
 }
 
 .art {
@@ -226,35 +223,34 @@ button:hover {
     flex-direction: column;
 }
 
-
 @media (max-width: 768px) {
     .art {
         flex: 1 1 100%;
     }
 }
 
-#su-76{
-    background-image: url('/img/su-76.jpg');
+#su-76 {
+    background-image: url("/img/su-76.jpg");
     width: auto;
     background-size: cover;
     min-width: 320px;
 }
 
-#t-34{
-    background-image: url('/img/t-34-76.jpg');
+#t-34 {
+    background-image: url("/img/t-34-76.jpg");
     width: auto;
     background-size: cover;
     min-width: 320px;
 }
 
-#kv-1{
+#kv-1 {
     background-image: url("/img/kv-1.jpg");
     width: auto;
     background-size: cover;
     min-width: 320px;
 }
 
-#is-1{
+#is-1 {
     background-image: url("/img/is-1.jpeg");
     width: auto;
     background-size: cover;
@@ -270,7 +266,7 @@ button:hover {
     text-decoration: none;
 }
 
-.searchPage{
+.searchPage {
     background-color: black;
 }
 
@@ -278,24 +274,22 @@ button:hover {
     .t-34back {
         top: 96px;
         height: 100vh;
-        background-image: url('/img/t-34background_mobile.jpg');
+        background-image: url("/img/t-34background_mobile.png");
     }
 
-    .container1{
+    .container1 {
         margin-top: auto;
     }
-
 }
-
 
 @media (max-width: 768px) {
     .t-34back {
         top: 160px;
         height: 50vh;
-        background-image: url('/img/t-34background_mobile.jpg');
+        background-image: url("/img/t-34background_mobile.png");
     }
 
-    .container1{
+    .container1 {
         margin-top: auto;
         margin-bottom: 30px;
     }
@@ -303,16 +297,13 @@ button:hover {
     .slide {
         height: auto;
     }
-
-
 }
-
 
 @media (max-width: 316px) {
     .t-34back {
         top: 288px;
         height: 50vh;
-        background-image: url('/img/t-34background_mobile.jpg');
+        background-image: url("/img/t-34background_mobile.png");
     }
 }
 
@@ -324,8 +315,7 @@ footer {
     margin-top: 40px;
 }
 
-
-.about-footer>a {
+.about-footer > a {
     display: flex;
     font-size: 16px;
     padding-right: 0;
@@ -340,14 +330,14 @@ footer {
     margin-right: 30px;
 }
 
-.team-footer>p {
+.team-footer > p {
     display: inline-block;
     color: white;
     font-size: 16px;
     margin: 0;
 }
 
-@media(max-width: 420px) {
+@media (max-width: 420px) {
     footer {
         flex-direction: column;
     }
