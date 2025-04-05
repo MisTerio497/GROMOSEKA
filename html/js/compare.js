@@ -271,7 +271,7 @@ async function setupFormHandlers() {
     // Обработчик для первой формы
     form1.addEventListener('submit', async (event) => {
         event.preventDefault(); // Отключаем стандартную отправку
-        const tankName = document.getElementById('searchQuery1').value; // Получаем данные из формы
+        const tankName = document.getElementById('searchQuery1').value.toUpperCase(); // Получаем данные из формы
         form1.reset(); // Очищаем форму
 
         // Получаем данные танка по его названию
@@ -281,14 +281,14 @@ async function setupFormHandlers() {
             await setSessionItem('t1', dataToSend);
             await fillTd(dataToSend);
         } else {
-            alert('Танк не найден. Попробуйте ввести по другому');
+            alert('Танк не найден. Попробуйте ввести по другому, возможно у вас включена английская раскладка. Также попробуйте дописать год у танка, например Т-34 (1942)');
         }
     });
 
     // Обработчик для второй формы
     form2.addEventListener('submit', async (event) => {
         event.preventDefault(); // Отключаем стандартную отправку
-        const tankName = document.getElementById('searchQuery2').value; // Получаем данные из формы
+        const tankName = document.getElementById('searchQuery2').value.toUpperCase(); // Получаем данные из формы
         form2.reset(); // Очищаем форму
 
         // Получаем данные танка по его названию
@@ -298,14 +298,14 @@ async function setupFormHandlers() {
             await setSessionItem('t2', dataToSend);
             await fillTd(dataToSend);
         } else {
-            alert('Танк не найден. Попробуйте ввести по другому');
+            alert('Танк не найден. Попробуйте ввести по другому, возможно у вас включена английская раскладка. Также попробуйте дописать год у танка, например Т-34 (1942)');
         }
     });
 
     // Обработчик для первой адаптивной формы
     form1_620.addEventListener('submit', async (event) => {
         event.preventDefault(); // Отключаем стандартную отправку
-        const tankName = document.getElementById('searchQuery1-620').value;
+        const tankName = document.getElementById('searchQuery1-620').value.toUpperCase();
         form1_620.reset(); // Очищаем форму
 
         // Получаем данные танка по его названию
@@ -315,14 +315,14 @@ async function setupFormHandlers() {
             await setSessionItem('t1', dataToSend);
             await fillTd(dataToSend);
         } else {
-            alert('Танк не найден. Попробуйте ввести по другому');
+            alert('Танк не найден. Попробуйте ввести по другому, возможно у вас включена английская раскладка. Также попробуйте дописать год у танка, например Т-34 (1942)');
         }
     });
 
     // Обработчик для второй адаптивной формы
     form2_620.addEventListener('submit', async (event) => {
         event.preventDefault(); // Отключаем стандартную отправку
-        const tankName = document.getElementById('searchQuery2-620').value;
+        const tankName = document.getElementById('searchQuery2-620').value.toUpperCase();
         form2_620.reset(); // Очищаем форму
 
         // Получаем данные танка по его названию
@@ -332,7 +332,7 @@ async function setupFormHandlers() {
             await setSessionItem('t2', dataToSend);
             await fillTd(dataToSend);
         } else {
-            alert('Танк не найден. Попробуйте ввести по другому');
+            alert('Танк не найден. Попробуйте ввести по другому, возможно у вас включена английская раскладка. Также попробуйте дописать год у танка, например Т-34 (1942)');
         }
     });
 }
