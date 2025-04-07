@@ -77,31 +77,45 @@ if (!$tank) {
     </nav>
 </header>
 
-<h1><?= htmlspecialchars($tank['nametank']) ?></h1>
+<div class="main">
+    <div class="info">
+        <h1><?= htmlspecialchars($tank['nametank']) ?></h1>
+        
+        <h2>Описание</h2>
+        <p><?= htmlspecialchars($tank['description']) ?></p>
+        
+        <h2>Характеристики</h2>
+        <table border="1">
+            <tr>
+                <th>Экипаж</th>
+                <td><?= htmlspecialchars($tank['team']) ?></td>
+            </tr>
+            <tr>
+                <th>Бронирование корпуса</th>
+                <td><?= htmlspecialchars($tank['hull_armor']) ?></td>
+            </tr>
+            <tr>
+                <th>Бронирование башни</th>
+                <td><?= htmlspecialchars($tank['tower_armor']) ?></td>
+            </tr>
+            <tr>
+                <th>Мобильность</th>
+                <td><?= htmlspecialchars($tank['mobility']) ?></td>
+            </tr>
+        </table>
+    </div>
+    <div class="tank-img">
+        <img src="<?= htmlspecialchars($tank['images_url']) ?>" alt="<?= htmlspecialchars($tank['nametank']) ?>" width="400">
+    </div>
+</div>
 
-<img src="<?= htmlspecialchars($tank['images_url']) ?>" alt="<?= htmlspecialchars($tank['nametank']) ?>" width="400">
-
-<h2>Описание</h2>
-<p><?= htmlspecialchars($tank['description']) ?></p>
-
-<h2>Характеристики</h2>
-<table border="1">
-    <tr>
-        <th>Экипаж</th>
-        <td><?= htmlspecialchars($tank['team']) ?></td>
-    </tr>
-    <tr>
-        <th>Бронирование корпуса</th>
-        <td><?= htmlspecialchars($tank['hull_armor']) ?></td>
-    </tr>
-    <tr>
-        <th>Бронирование башни</th>
-        <td><?= htmlspecialchars($tank['tower_armor']) ?></td>
-    </tr>
-    <tr>
-        <th>Мобильность</th>
-        <td><?= htmlspecialchars($tank['mobility']) ?></td>
-    </tr>
-</table>
+    <footer>
+        <div class="about-footer">
+            <a href="about.html">О проекте</a>
+        </div>
+        <div class="team-footer">
+            <p>© 2025 Диванные хакеры</p>
+        </div>
+    </footer>
 </body>
 </html>
