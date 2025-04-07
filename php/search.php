@@ -2,7 +2,7 @@
 header("Content-Type: application/json");
 
 try {
-    $pdo = new PDO("pgsql:host=db;dbname=tanks", "postgres", "admin");
+    $pdo = require_once "data.conf.php";
     $stmt = $pdo->query("SELECT * FROM tanks");
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
