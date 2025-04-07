@@ -111,7 +111,7 @@ if (!$tank) {
 
     <footer>
         <div class="about-footer">
-            <a href="about.html">О проекте</a>
+            <a href="/about">О проекте</a>
         </div>
         <div class="team-footer">
             <p>© 2025 Диванные хакеры</p>
