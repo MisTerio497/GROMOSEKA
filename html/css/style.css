@@ -1,4 +1,7 @@
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     margin: 0;
     font-family: "Anonymous Pro", monospace;
     background-color: #f3f3f3;
@@ -303,6 +306,108 @@ button:hover {
         top: 288px;
         height: 50vh;
         background-image: url("/img/t-34background_mobile.png");
+    }
+}
+
+.main {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 50px;
+    max-width: 1000px;
+    flex: 1;
+}
+
+.info>h1 {
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+}
+
+.info>h2 {
+    margin-bottom: 0;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+.info>table {
+    max-width: 500px;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th {
+    border: 1px solid black;
+    padding: 15px;
+}
+
+td {
+    border: 1px solid black;
+    padding: 15px;
+}
+
+.tank-img {
+    display: inline-block;
+}
+
+@media(max-width: 1100px) {
+    .main {
+        margin: 0 10vw;
+        margin-top: 50px;
+    }
+}
+
+@media(max-width: 880px) {
+    th {
+        padding: 10px;
+    }
+
+    td {
+        padding: 10px;
+    }
+
+    .tank-img>img {
+        width: 350px;
+    }
+}
+
+@media(max-width: 800px) {
+    .main {
+        margin: 0 40px;
+        margin-top: 50px;
+    }
+}
+
+@media(max-width: 700px) {
+    .tank-img>img {
+        width: 300px;
+    }
+}
+
+@media(max-width: 650px) {
+    .main {
+        flex-direction: column-reverse;
+    }
+
+    .tank-img {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media(max-width: 400px) {
+    .main {
+        margin: 0 20px;
+        margin-top: 50px;
+    }
+
+    th {
+        padding: 5px;
+    }
+
+    td {
+        padding: 5px;
     }
 }
 
