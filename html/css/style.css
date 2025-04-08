@@ -88,7 +88,7 @@ a {
 }
 
 main {
-    margin-top: auto;
+    margin-top: 100vh;
     position: relative;
     z-index: 2;
 }
