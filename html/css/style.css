@@ -284,13 +284,13 @@ button:hover {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 593px) {
    main{
        margin-top: 50vh;
    } 
     
     .t-34back {
-        top: 160px;
+        top: 192px;
         height: 50vh;
         background-image: url("/img/t-34background_mobile.png");
     }
@@ -307,7 +307,7 @@ button:hover {
 
 @media (max-width: 395px) {
     .t-34back {
-        top: 290px;
+        top: 288px;
         height: 50vh;
         background-image: url("/img/t-34background_mobile.png");
     }
