@@ -108,7 +108,7 @@ main {
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    margin: 115vh 20px 270px 20px;
+    margin: auto 20px 270px 20px;
     gap: 30px;
 }
 
@@ -279,9 +279,6 @@ button:hover {
         background-image: url("/img/t-34background_mobile.png");
     }
 
-    .container1 {
-        margin-top: auto;
-    }
 }
 
 @media (max-width: 593px) {
@@ -295,10 +292,6 @@ button:hover {
         background-image: url("/img/t-34background_mobile.png");
     }
 
-    .container1 {
-        margin-top: auto;
-        margin-bottom: 30px;
-    }
 
     .slide {
         height: auto;
