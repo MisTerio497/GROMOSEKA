@@ -184,9 +184,9 @@ main {
 }
 
 /* Адаптивные стили */
-@media (max-width: 768px) {
+@media (max-width: 1001px) {
     .tanks-search-container {
-        margin: 30px auto;
+        margin: auto;
     }
     
     .tanks-search-title {
@@ -208,8 +208,61 @@ main {
         height: 180px;
     }
 }
+@media (max-width: 768px) {
+    .tanks-search-container {
+        margin: auto;
+    }
+    
+    .tanks-search-title {
+        font-size: 2rem;
+    }
+    
+    .tanks-search-input {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+    
+    #results {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 15px;
+    }
+    
+    #results img {
+        height: 180px;
+    }
+}
+@media (min-width: 481px) and (max-width: 600px) {
+    /* .tanks-search-container {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+    
+    .tanks-search-title {
+        font-size: 1.8rem;
+    }
+    
+    .tanks-search-input {
+        padding: 10px 15px;
+    }
+    
+    #results {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
+    }
+    
+    #results p {
+        font-size: 1rem;
+        padding: 12px;
+    }
+    
+    #results img {
+        height: 160px;
+    } */
+}
 
-@media (max-width: 480px) {
+@media (max-width: 481px) {
     .tanks-search-container {
         margin: 20px auto;
         padding: 0 15px;
@@ -236,6 +289,22 @@ main {
     
     #results img {
         height: 160px;
+    }
+}
+
+@media(max-width: 420px) {
+    footer {
+        flex-direction: column;
+    }
+
+    .about-footer {
+        display: flex;
+        justify-content: center;
+    }
+
+    .team-footer {
+        justify-content: center;
+        margin-bottom: 20px;
     }
 }
 
@@ -270,18 +339,3 @@ footer {
     margin: 0;
 }
 
-@media(max-width: 420px) {
-    footer {
-        flex-direction: column;
-    }
-
-    .about-footer {
-        display: flex;
-        justify-content: center;
-    }
-
-    .team-footer {
-        justify-content: center;
-        margin-bottom: 20px;
-    }
-}
