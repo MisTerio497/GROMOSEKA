@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ tank['nametank'] }}</title>
+</head>
+<body>
+    <h1>{{ tank['nametank'] }}</h1>
+
+    <!-- Изображение танка -->
+    <img src="{{ tank['images_url'] }}" alt="{{ tank['nametank'] }}" width="400">
+
+    <h2>Описание</h2>
+    <p>{{ tank['description'] }}</p>
+
+    <h2>Характеристики</h2>
+    <table border="1">
+        <tr>
+            <th>Экипаж</th>
+            <td>{{ tank['team'] }}</td>
+        </tr>
+        <tr>
+            <th>Бронирование корпуса</th>
+            <td>{{ tank['hull_armor'] }}</td>
+        </tr>
+        <tr>
+            <th>Бронирование башни</th>
+            <td>{{ tank['tower_armor'] }}</td>
+        </tr>
+        <tr>
+            <th>Мобильность</th>
+            <td>{{ tank['mobility'] }}</td>
+        </tr>
+    </table>
+</body>
+</html>
